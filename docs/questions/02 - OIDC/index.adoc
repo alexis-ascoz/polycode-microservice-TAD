@@ -1,5 +1,7 @@
 == Authentication
 
+// TOOD : intro ?
+
 // TODO : add poc public link
 
 === Oauth 2.0

@@ -1,3 +1,57 @@
 == Fonctionnal quarters
 
-test
+To start with the microservices architecture, it is necessary to define the functional quarters of the application, to initiate a first separation of the application into microservices. A functionnal quarter is define by a set of user stories.
+
+=== User story vocabulary
+
+First, we will define the vocabulary used to describe the user stories.
+
+Guest:: Someone who doesn't have a PolyCode account.
+
+User:: Someone who has a PolyCode account.
+
+Admin:: A privilegied user that can manage all the resources of PolyCode.
+
+Module:: A coherent set of module and contents, organized in a tree structure. A module can be a challenge, a practice, a certification, a submodule, a test, etc.
+
+Content:: A coherent set of components, organized in a tree structure. It's a branch of the tree that are the modules. A content can be an exercice, a lesson, a question, etc.
+
+Component:: A coherent set of components, organized in a tree structure. It's a branch or a leave of another branch that are the contents or the components. A component can be an code editor, a quizz, a markdown, a mcq, a container, etc.
+
+Test:: A type of module. He is made to evaluate users. It has a grade, which is the average of the grades of all contents of the test.
+
+Assessment:: A section of PolyCode made to evaluate users, by passing tests.
+
+Campaign:: The realization of an assessment in a set of users. 
+
+Candidate:: Someone who is invited to participate to a campaign. Became an user if he accepts the invitation.
+
+Assessment creator:: A user who can create an test or an assessment, then invite someone to participate to it, as a candidate.
+
+Practice creator:: A user who can manage his modules.
+
+Submitable:: A component that can be submitted by the user. It can be a code editor, a quizz, a mcq, etc.
+
+Validator:: The excepted response to a submitable.
+
+Submission:: A user answer to a submitable. It is verified by a set of validators.
+
+Tag:: A keyword that can be associated to a content, a candidate, etc.
+
+Item:: A purchasable object. It can be a hint, a validator, etc.
+
+Purchase:: The action of buying an item.
+
+Hint:: A type of item that gives a clue to the user to solve a component. It is bought with polypoints.
+
+Polypoints:: A virtual money responsible of the gamification of PolyCode. It can be used to buy items, like hints. It also used to rank users. The polypoints are collected by the users by passing modules and contents.
+
+Team:: A group of users. The team polypoints are the sum of the polypoints of all users of the team, and is used to rank the teams.
+
+Captain:: A user who can manage his team.
+
+=== User stories
+
+=== Functional quarters
+
+=== Architecture diagram of PolyCode in microservices

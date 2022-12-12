@@ -1,0 +1,1 @@
+Microservices architecture:: An architecture where the system is divided into multiple services that communicate with each other.

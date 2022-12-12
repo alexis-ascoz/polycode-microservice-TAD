@@ -25,6 +25,8 @@ include::questions/02 - OIDC/index.adoc[]
 <<<
 [glossary]
 == Glossary
+include::questions/00 - Introduction/glossary.adoc[]
+
 include::questions/01 - Functional quarters/glossary.adoc[]
 
 include::questions/02 - OIDC/glossary.adoc[]
@@ -32,6 +34,8 @@ include::questions/02 - OIDC/glossary.adoc[]
 <<<
 [bibliography]
 == Bibliography
+include::questions/00 - Introduction/bibliography.adoc[]
+
 include::questions/01 - Functional quarters/bibliography.adoc[]
 
 include::questions/02 - OIDC/bibliography.adoc[]

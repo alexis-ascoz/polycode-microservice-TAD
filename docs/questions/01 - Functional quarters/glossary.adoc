@@ -1,1 +1,5 @@
-mud:: wet, cold dirt
+Actors:: It is a person that interacts with the system. It can be a user, a system, a third party, etc.
+
+User story:: Informal, short and clear description of a feature from the perspective of the user. It takes the following format: "As a [actor], I want [feature], so that [benefit]".
+
+Functionnal quarter:: A functionnal quarter is a set of user stories that are related to a same feature.

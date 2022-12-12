@@ -1,6 +1,5 @@
 == Introduction
 
-Polycode is a web application used to learn programming languages, or to make coding interviews.
+Polycode is a web application. His goal is to provide a simple and intuitive way to learn programming, get certifications, participate in coding campaings, and to make coding interviews.
 
-The goal is to provide a simple and intuitive way to learn programming, get certifications, participate in coding campaings, and to make coding interviews.
 The application is available at https://polycode.do-2021.fr.

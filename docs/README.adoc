@@ -1,6 +1,7 @@
 = PolyCode Technical Architecture Document 
 Alexis Bernard <alexisbernard34310@gmail.com> 
 :description: This document describes the technical architecture of PolyCode to the microservices migration. 
+:hide-uri-scheme:
 :sectanchors: 
 :toc:
 :toclevels: 5

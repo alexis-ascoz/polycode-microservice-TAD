@@ -60,103 +60,101 @@ The following table contains the most of the user stories of PolyCode. It is not
                         ^.^| So that
 
 ^.^| Guest              ^.^| Create my account
+                        ^.^| Connect to my account.
+
+^.^| User               ^.^| Connect to my account with my email and my password
                         ^.^| Use the PolyCode features.
 
-^.^| User               ^.^| Update my emails
+^.^| User               ^.^| Logout from my account
+                        ^.^| Remove my session and go back as a guest.
+
+^.^| User               ^.^| Reset my password
+                        ^.^| Edit my credentials.
+
+^.^| User               ^.^| Show my profile
+                        ^.^| See my user information.
+
+^.^| User               ^.^| Update my profile, emails or user settings.
                         ^.^| Edit my user information.
 
 ^.^| User               ^.^| Receive a welcome email when I sign up
                         ^.^| Know that my account is created.
 
-^.^| User               ^.^| Afficher les informations à propos de mon compte
-                        ^.^| Je puisse revoir mes informations personelles
-
-^.^| User               ^.^| Afficher les informations à propos du compte d'un autre utilisateur
-                        ^.^| Je puisse me renseigner sur un utilisateur
-
-^.^| User               ^.^| Change my username, my programming language and my bio
-                        ^.^| Mes informations personnelle soit toujours à jour
+^.^| User               ^.^| Show a user profile
+                        ^.^| Get some information about a user (pseudo, rank, etc).
 
 ^.^| User               ^.^| Delete my account
-                        ^.^| Ne plus avoir de trace sur l'application
-
-^.^| User               ^.^| Connect to my account by my username and my password
-                        ^.^| je puisse accèder à toutes les fonctionnalités de l'application
-
-^.^| User               ^.^| Logout of my account
-                        ^.^| Éviter les accès non autorisés depuis le navigateur utilsé.
-
-^.^| User               ^.^| Reset my password by an email
-                        ^.^| Je puisse récupérer mon compte en cas de perte de mon mot de passe
+                        ^.^| Delete my user information.
 
 ^.^| User               ^.^| Create a new team
-                        ^.^| Réunir un groupe d'utilisateurs (motivation) et parciper au leaderboard des équipes (somme des points de chaque utilisateur).
+                        ^.^| Become a captain of a team.
 
 ^.^| Captain            ^.^| Invite other users in my team
-                        ^.^| mon équipe s'agrandisse
+                        ^.^| Grow my team and make it more active.
 
-^.^| Captain            ^.^| Delete a member from my team
-                        ^.^| Enlever un membre problématique / non actif / qui n'est plus en adéquation avec le groupe.
+^.^| Captain            ^.^| Kick a member from my team
+                        ^.^| Remove a member who is not active anymore or who is not a good fit for the team.
 
 ^.^| Captain            ^.^| Give the captain role to another member of my team
-                        ^.^| je sois disposé de ces fonctions
+                        ^.^| Promote a member who is more active than me.
 
 ^.^| Captain            ^.^| Delete my team
-                        ^.^| ne plus avoir de traces de cette équipe, pour quelconque raison.
+                        ^.^| Dissolve my team.
 
-^.^| Captain            ^.^| Change the name and the description of my team
-                        ^.^| les informations de l'équipe reste à jour
+^.^| Captain            ^.^| Update my team details
+                        ^.^| Edit my team information.
 
-^.^| User               ^.^| accepter ou décliner une invitation à une équipe
-                        ^.^| ajoute les PolyPoints (précédents) et gagnés de l'utilisateur à l'équipe
+^.^| User               ^.^| Accept an invitation to join a team
+                        ^.^| Join a team.
 
-^.^| User               ^.^| pouvoir quitter une équipe
-                        ^.^| je ne sois plus associé à un groupe d'utilisateur
+^.^| User               ^.^| Reject an invitation to join a team
+                        ^.^| Don't join a team.
 
-^.^| User               ^.^| voir les points de mon équipe
-                        ^.^| Constater l'avancement /motivation
+^.^| User               ^.^| Leave a team
+                        ^.^| No longer be a member of a team.
 
-^.^| User               ^.^| voir le classement des équipes
-                        ^.^| Je vois le placement de mon équipe vis-à-vis des autres
+^.^| User               ^.^| Show a team profile
+                        ^.^| Get some information about a team (name, rank, etc).
 
-^.^| User               ^.^| voir le classement interne des membres de l'équipe
-                        ^.^| Voir qui a participé le plus dans l'équipe, concurrence interne ⇒ motivation
+^.^| User               ^.^| Show the ranking of the teams
+                        ^.^| Compare my team with other teams.
 
-^.^| User               ^.^| voir la liste des exercices disponibles
-                        ^.^| je puisse choisir un exercice à faire
+^.^| User               ^.^| Show the ranking of the users
+                        ^.^| Compare my rank with other users.
 
-^.^| User               ^.^| voir la liste des modules disponibles
-                        ^.^| je puisse choisir un module à faire
+^.^| User               ^.^| Show content list
+                        ^.^| Choose an content to do.
 
-^.^| User               ^.^| voir les sous-modules et les exercices d'un module
-                        ^.^| Trouver les étapes à faire pour compléter le module ⇒ compléter la notion
+^.^| User               ^.^| Show module list
+                        ^.^| Choose a module to do.
 
-^.^| User               ^.^| voir la liste des évaluations disponibles
-                        ^.^| je puisse choisir une évaluation à passer
+^.^| User               ^.^| Show the description of a module
+                        ^.^| Take information about the module.
 
-^.^| User               ^.^| voir les derniers exercices / modules mis en ligne (actualités)
-                        ^.^| Voir le nouveau contenu
+^.^| User               ^.^| Show test list
+                        ^.^| Choose a test to do.
 
-^.^| User               ^.^| voir les informations d'un exercice
-                        ^.^| s'informer sur le sujet d'un exercice
+^.^| User               ^.^| Show new modules and contents
+                        ^.^| Find modules that I never did.
 
-^.^| User               ^.^| voir les informations d'un module
-                        ^.^| S'informer sur le sujet du module, l'objectif
+^.^| User               ^.^| Show the description of a content
+                        ^.^| Take information about the content.
 
-^.^| User               ^.^| voir les informations d'une évaluation
-                        ^.^| S'informer sur le sujet de l'évaluation, l'objectif
+^.^| User               ^.^| Show the description of a test
+                        ^.^| Take information about the test.
 
-^.^| User               ^.^| voir l'énoncé d'un exercice
-                        ^.^| Apprendre une nouvelle notion, connaître le problème à résoudre, question à répondre pour valider la notion
+^.^| User               ^.^| Submit a solution to a component
+                        ^.^| Complete a content then earn polypoints.
 
-^.^| User               ^.^| proposer une solution à l'exercice
-                        ^.^| gagner des PolyPoints et avancer dans le module associé
+^.^| User               ^.^| For a code editor, submit a solution for only one validator
+                        ^.^| Check if my solution is correct for a specific validator.
 
-^.^| User               ^.^| dans le cas d'un code à écrire, exécuter un validateur intermédiaire 
-                        ^.^| vérifier si mon code est correct pour le validateur en question
+^.^| User               ^.^| Show the last submissions of a component who passed all validators
+                        ^.^| Improve my old solution.
 
-^.^| User               ^.^| revoir la dernière solution qui à passée le plus de validateurs
-                        ^.^| Reprendre le code depuis un appareil différent, à un autre moment, pour l'améliorer
+
+
+
 
 ^.^| User               ^.^| Écrire (et modifier) sa solution de code dans un éditeur intégré à la page de l'exercice (cas d'exercice de code)
                         ^.^| proposer une solution à l'exercice

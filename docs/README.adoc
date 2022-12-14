@@ -7,7 +7,6 @@ Alexis Bernard <alexisbernard34310@gmail.com>
 :toclevels: 5
 :toc-title: Table of Contents
 
-
 <<<
 :imagesdir: questions/00 - Introduction
 include::questions/00 - Introduction/index.adoc[]
@@ -23,6 +22,7 @@ include::questions/01 - Functional quarters/index.adoc[]
 include::questions/02 - OIDC/index.adoc[]
 
 <<<
+:sectnums!:
 [glossary]
 == Glossary
 include::questions/00 - Introduction/glossary.adoc[]
@@ -32,7 +32,6 @@ include::questions/01 - Functional quarters/glossary.adoc[]
 include::questions/02 - OIDC/glossary.adoc[]
 
 <<<
-[bibliography]
 == Bibliography
 include::questions/00 - Introduction/bibliography.adoc[]
 

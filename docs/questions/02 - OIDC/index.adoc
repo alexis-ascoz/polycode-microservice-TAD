@@ -1,93 +1,125 @@
 == Authentication
 
-// TOOD : intro ?
+Authentication is the process of verifying the identity of a user or process. In this part, we will see the different authentication methods and how to implement them.
 
 // TODO : add poc public link
 
 === Oauth 2.0
 
-https://blog.postman.com/pkce-oauth-how-to/[good explain + source of images] +
-https://www.youtube.com/watch?v=YdShQveywpo[devoxx video] +
-https://www.youtube.com/watch?v=t18YB3xDfXI[deuxième vidéo]
+OAuth 2.0 is an framework that enables websites or applications to access resources from others web applications, without having to share the user's credentials.
+
+Clearly, it allows a user to grant limited access to their resources on one site, to another site, without having to expose their password.
+
 
 ==== Terminologies
 
-Protected resource: the data +
-Resource server: that know the protected resource +
-Authorization server: that know the account credentials +
-Client: that want your data +
-Resource owner: you +
-Redirect URI: url the authorization server back to after login (callback url) +
-Response type: most common = code, but for an implicit grant type response_type=token (liste) +
-Scope: read/etc on a resource +
-Consent: the popup that prompt to user to agree data sharing +
-Client ID: delivered by the authorization server, he is used to identify the client +
-Client Secret: only client and auth server know to communicate securely (its a hash so after sending it  nobody can get it again) +
-Authorization Code: short lived temporary code the auth server send back to the client to exchange for an access token +
-Access token: key the client use to call the resource server and get data +
+With Oauth 2.0, it's important to understand the different terms. Here is a list of the most important of them :
+
+Protected resource:: The data you want to access. For example, a user's profile information.
+
+Resource server:: The server hosting the protected resource. This is the API you want to access.
+
+Authorization server:: The server that authenticates the user and issues access tokens after getting proper authorization. This is the server that you use to log in to your account.
+
+Client:: The application that wants to access the protected resource. For example, a mobile app or a website.
+
+Resource owner:: The user that owns the protected resource. When the resource owner is a person, it is referred to as an end-user.
+
+Redirect URI:: The URI to which the authorization server will redirect the user after obtaining authorization.
+
+Response type:: The type of the response used to get the authorization code. The authorization code is used to get the access token.
+
+Scope:: The scope of the access request. This is a list of space-delimited, case-sensitive strings, defined by the authorization server.
+
+Consent:: The small box that asks the user if they want to allow the client to access their protected resources.
+
+Client ID:: The client identifier issued to the client during the registration process. This is the public identifier for the client.
+
+Client Secret:: The client secret issued to the client during the registration process. This is the secret known only to the client and the authorization server.
+
+Authorization Code:: The temporary code issued by the authorization server in exchange for the access token request.
+
+Access token:: The token issued by the authorization server. The client uses the access token to access the protected resource.
+
+Access token:: The token issued by the authorization server. The client uses the refresh token to get a new access token.
 
 ==== Flow
 
-image::images/image1.png[]
+There is mutliple flow to authenticate a user. Here is the most common ones, and his differences.
+
+.Oauth flows comparaison
+image::images/Oauth flows comparaison.png[]
 
 ===== Authorization code flow
 
-image::images/image2.png[]
+The authorization code flow is the most secure one. It's the one we will use in this project. Here is a diagram of this flow :
+
+.Authorization code flow
+image::images/Authorization code flow.png[]
 
 ===== Implicit flow
 
-In implicit flow, the authorization server return directly the token (response_type=token). This method is not secure.
+The implicit flow is the most simple one. In this flow, the authorization server return directly the token. This method is not secure and should not be used in production. Here is a diagram of this flow :
 
-image::images/image12.png[]
+.Implicit flow
+image::images/Implicit flow.png[]
 
 ===== Hybrid flow
 
-Same as implicit flow, but when the authorization server authorize the user, he call the token server that generate and send to you the token
+The hybrid flow is the same as authorization code flow, but there is a token server that deliver the token, after authentication by the authorization server. Here is a diagram that explain the request path :
+
+.Hybrid flow
+image::images/Hybrid flow.png[]
 
 ==== Refresh token
 
-image::images/image3.png[]
+Once the user is authenticated, the authorization server return an access token, valid for a certain amount of time. Once this token expires, the client can ask for a new one, using the refresh token. Here is a diagram of the flow to get a new token :
 
-==== Permissions
+.Refresh and access token
+image::images/Refresh and access token.png[]
 
-// TODO ?
+==== Scope
 
-==== LDAP vs CAS
-CAS is a protocol to authenticate users. It is used by many applications. +
-Lightweight Directory Access Protocol (LDAP) is a protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network. +
+A access token permits to access to a protected resource. But, it's not enough to access to all the resources. The authorization server can restrict the access, depending on the scope of the access token.
 
-=== Oauth 2.1 [In progress]
+The score are asked by the client, in the query. Once the user is authenticated, the authorization server ask the user if he want to grant the requested scope, by displaying a consent page. If the user accept, the authorization server return the access token, with the requested scope.
 
-https://fusionauth.io/learn/expert-advice/oauth/differences-between-oauth-2-oauth-2-1#:~:text=OAuth%202.1%20is%20not%20a,a%20reference%20document%20going%20forward[Source] +
-Consolidated by 8 years of best practices in Oauth 2.0
-Any new features +
-Change list : +
-1. PKCE +
-2. Compare the redirect client uri with exact maching pattern +
-3. The implicit flow is removed +
-4. Resource Owner Password Credentials grant is omitted (because client have the user credentials with this method) +
-5. Bearer token usage now requires the use of the HTTP Authorization header (instead of uri) +
-6. Limit refresh tokens : must either be sender-constrained or one-time-use +
+==== SSO
+SSO (Single Sign On) is a protocol that allows a user to authenticate once to access multiple applications. With this property, a user logs in with a single ID and password to gain access to a connected system. The user is then signed in to all other systems that are part of the SSO infrastructure. This is in contrast to having to log in separately to each system.
 
-=== PKCE (Proof Key for Code Exchange)
+An example of SSO is a student logging in to a university's portal to access email, course registration, and other services.
 
-https://www.loginradius.com/blog/engineering/pkce/[Source] +
-It’s an overcoat of the oauth2 protocol when you ask for an access token.
+=== PKCE
+
+PKCE (Proof Key for Code Exchange) is an extension of Oauth 2.0. It's a security feature that prevents an attacker from stealing the authorization code.
 
 ==== Terminologies
 
-Code Verifier: huge random string, between 43 and 128 characters +
-Code challenge: BASE64-URL-encoded string of the SHA256 hash of the code verifier
+Here is the terminologies used in PKCE :
 
-Those informations are given to authorization server at the first query. When the client ask for a new token, he send to the authorization server the client id and the code verifier. The authorization server then hash the code verifier and compare it to the code challenge. If they match, the authorization server send back the access token.
+Code Verifier:: A huge random string (43 to 128 chars) generated by the client. It's used to generate the code challenge, and is not sent to the authorization server.
 
-image::images/image13.png[]
+Code challenge:: A base 64 encoded string of the code verifier. It's sent to the authorization server.
 
-image::images/image4.png[]
+==== Flow
 
-Then you can get access tokens like this:
+When the client send the authorization request to the authorization server, he also send the code challenge and the code challenge method (but not the code verifier).
 
-image::images/image5.png[]
+Then, when the client send back the authorization code to the authorization server, he also send the code verifier. The authorization server then hash the code verifier and compare it to the code challenge. If they match, the authorization server send back the access token. Here is a diagram of this flow :
+
+.Authorization code flow with PKCE
+image::images/Authorization code flow with PKCE.png[]
+
+=== Oauth 2.1
+
+Oauth 2.1 is not a new protocol, but a reference document. It's a consolidation of best practices in Oauth 2.0. Here is the differences between Oauth 2.0 and Oauth 2.1 :
+
+- PKCE (Proof Key for Code Exchange) is mandatory.
+- Redirect URI must be compared using exact string matching.
+- Implicit flow is not allowed.
+- Resource owner password credentials grant flow is not allowed (because with this flow, the client can access to the user's password).
+- Bearer token usage requires the use of the HTTP Authorization header field instead of the query parameter.
+- Refresh tokens must be bound to the client that requested them, or be one-time use.
 
 === OpenID Connect (OIDC)
 
@@ -107,7 +139,8 @@ https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-json-web-token-jwt[Source IBM
 
 ==== Anatomy
 
-image::images/image6.png[]
+.JWT decomposition
+image::images/JWT decomposition.png[]
 
 ==== Claims
 

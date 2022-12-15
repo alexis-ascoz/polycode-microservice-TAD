@@ -94,10 +94,35 @@ A access token permits to access to a protected resource. But, it's not enough t
 
 The score are asked by the client, in the query. Once the user is authenticated, the authorization server ask the user if he want to grant the requested scope, by displaying a consent page. If the user accept, the authorization server return the access token, with the requested scope.
 
-==== SSO
-SSO (Single Sign On) is a protocol that allows a user to authenticate once to access multiple applications. With this property, a user logs in with a single ID and password to gain access to a connected system. The user is then signed in to all other systems that are part of the SSO infrastructure. This is in contrast to having to log in separately to each system.
+=== JWT
 
-An example of SSO is a student logging in to a university's portal to access email, course registration, and other services.
+JWT (JSON Web Token) is an open standard that define a compact and URL-safe way to represent claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object. He have a header, a payload and a signature. He also have a expiration date.
+
+The JWT is used for the authentication in OpenID Connect. His integrity is verified by the signature, then no one can modify the data.
+
+==== Anatomy
+
+Here is an explaination of the JWT parts :
+
+.JWT decomposition
+image::images/JWT decomposition.png[]
+
+==== Claims
+
+The payload of a JWT contains claims. Claims are statements about an entity (typically, a user) and additional metadata.
+
+There are three types of claims :
+
+- `Registered claims`: These are a set of predefined claims which are not mandatory but recommended. Some of them are : iss (issuer), sub (subject), aud (audience), exp (expiration time), nbf (not before), iat (issued at), and jti (JWT ID).
+
+- `Public claims`: These can be defined at will by those using JWTs. This can be used to share information between parties that agree on using the same claim names.
+
+- `Private claims`: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.
+
+Here is an payload of an basic ID token used in OpenID Connect, with the definition of each claims :
+
+.ID token payload
+image::images/ID token payload.png[]
 
 === PKCE
 
@@ -131,6 +156,11 @@ Oauth 2.1 is not a new protocol, but a reference document. It's a consolidation 
 - Bearer token usage requires the use of the HTTP Authorization header field instead of the query parameter.
 - Refresh tokens must be bound to the client that requested them, or be one-time use.
 
+=== SSO
+SSO (Single Sign On) is a protocol that allows a user to authenticate once to access multiple applications. With this property, a user logs in with a single ID and password to gain access to a connected system. The user is then signed in to all other systems that are part of the SSO infrastructure. This is in contrast to having to log in separately to each system.
+
+An example of SSO is a student logging in to a university's portal to access email, course registration, and other services.
+
 === OpenID Connect
 
 OpenID Connect (OIDC) is an authentication layer on top of Oauth 2.0. It's a protocol that allows clients to verify the identity of the end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.
@@ -141,36 +171,6 @@ There is multiple scopes in OIDC. Let's see the most common ones :
 
 .OIDC scopes
 image::images/OIDC scopes.png[]
-
-=== JWT
-
-JWT (JSON Web Token) is an open standard that define a compact and URL-safe way to represent claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object. He have a header, a payload and a signature. He also have a expiration date.
-
-The JWT is used for the authentication in OpenID Connect. His integrity is verified by the signature, then no one can modify the data.
-
-==== Anatomy
-
-Here is an explaination of the JWT parts :
-
-.JWT decomposition
-image::images/JWT decomposition.png[]
-
-==== Claims
-
-The payload of a JWT contains claims. Claims are statements about an entity (typically, a user) and additional metadata.
-
-There are three types of claims :
-
-- `Registered claims`: These are a set of predefined claims which are not mandatory but recommended. Some of them are : iss (issuer), sub (subject), aud (audience), exp (expiration time), nbf (not before), iat (issued at), and jti (JWT ID).
-
-- `Public claims`: These can be defined at will by those using JWTs. This can be used to share information between parties that agree on using the same claim names.
-
-- `Private claims`: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.
-
-Here is an payload of an basic ID token used in OpenID Connect, with the definition of each claims :
-
-.ID token payload
-image::images/ID token payload.png[]
 
 ==== Endpoints
 

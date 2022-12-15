@@ -2,8 +2,6 @@
 
 Authentication is the process of verifying the identity of a user or process. In this part, we will see the different authentication methods and how to implement them.
 
-// TODO : add poc public link
-
 === Oauth 2.0
 
 OAuth 2.0 is an framework that enables websites or applications to access resources from others web applications, without having to share the user's credentials.
@@ -43,7 +41,7 @@ Access token:: The token issued by the authorization server. The client uses the
 
 Access token:: The token issued by the authorization server. The client uses the refresh token to get a new access token.
 
-==== Flow
+==== Flows
 
 There is mutliple flow to authenticate a user. Here is the most common ones, and his differences.
 
@@ -163,11 +161,11 @@ The payload of a JWT contains claims. Claims are statements about an entity (typ
 
 There are three types of claims :
 
-- Registered claims: These are a set of predefined claims which are not mandatory but recommended. Some of them are : iss (issuer), sub (subject), aud (audience), exp (expiration time), nbf (not before), iat (issued at), and jti (JWT ID).
+- `Registered claims`: These are a set of predefined claims which are not mandatory but recommended. Some of them are : iss (issuer), sub (subject), aud (audience), exp (expiration time), nbf (not before), iat (issued at), and jti (JWT ID).
 
-- Public claims: These can be defined at will by those using JWTs. This can be used to share information between parties that agree on using the same claim names.
+- `Public claims`: These can be defined at will by those using JWTs. This can be used to share information between parties that agree on using the same claim names.
 
-- Private claims:: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.
+- `Private claims`: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.
 
 Here is an payload of an basic ID token used in OpenID Connect, with the definition of each claims :
 
@@ -183,14 +181,80 @@ image::images/OIDC endpoints.png[]
 
 === Tools
 
+There is multiple tools to help you to implement Oauth 2.0 and OpenID Connect in your application. This part will explain the most common ones and how to use them.
+
 ==== KeyCloak
 
-===== Migration
+KeyCloak is an open source identity and access management solution. It's a single sign-on solution that allows you to manage users, applications, roles, groups, etc. It's an Oauth 2.0, OpenID Connect and SAML 2.0 compliant solution.
 
-==== Okta
+With the graphical interface, you can manage easily and quickly your resources. It supports multiple factors authentication and social login, all with a lot of adapters to integrate it in your application.
 
-==== Auth0
+Here is an image of the keycloak architecture :
 
-==== FusionAuth
+.Keycloak architecture
+image::images/Keycloak architecture.png[]
 
-==== AWS Cognito
+In the case of PolyCode, we will use KeyCloak to manage the authentication and authorization of our users and services.
+
+==== Others solutions
+
+There is multiple other solutions to manage the authentication and authorization of your users and services. Because we will use KeyCloak for PolyCode, we have detailed it in the previous section.
+
+Here is a list of other possible solutions :
+
+- `Okta` (Cloud service)
+- `Auth0` (Cloud service)
+- `FusionAuth` (Open source solution)
+- `AWS Cognito` (Cloud service)
+
+=== PolyCode authentication migration
+
+For now, we use an Oauth2 system, with our own implementation. We will migrate this to KeyCloak, to have a more robust and scalable solution. Note that we will not migrate the authorization part, because is not the purpose here.
+
+To do this, we will follow multiple steps. This document is based on the https://www.keycloak.org/getting-started/getting-started-docker[official KeyCloak documentation].
+
+==== Setup KeyCloak
+
+First, we need to setup a KeyCloak instance. You can use the docker image, or install it on your server. You can run a KeyCloak instance in dev mode with the following command :
+
+```bash
+docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:20.0.2 start-dev
+```
+
+==== Configure KeyCloak
+
+Once the KeyCloak instance is running, you can access it at http://localhost:8080 with the `admin`/`admin` credentials if you used the command above.
+
+Once logged in, you can create a new realm. A realm is a group of users, applications, and clients. You can create multiple realms in KeyCloak, and each realm is isolated from the others. For PolyCode, we will create a `polycode` realm.
+
+==== KeyCloak clients
+
+A client is an application that wants to use KeyCloak to authenticate users. You can create multiple clients in a realm. For PolyCode, we will create two clients :
+
+- `polycode`: The client for the PolyCode application frontend.
+- `polycode-api`: The client for the PolyCode API.
+
+Each client have multiple settings :
+
+- `Client ID`: The unique identifier of the client.
+- `Client Protocol`: The protocol used by the client. We will use `openid-connect`.
+- `Valid Redirect URIs`: The list of valid redirect URIs for the client. For the `polycode` client, we will use `<frontend_url>/auth/callback`. For the `polycode-api` client, we will use `<api_url>/auth/callback`.
+- `Web Origins`: The list of valid web origins for the client. For now, we will use `*` to allow all origins.
+- `Credentials`: The credentials used by the client to authenticate to KeyCloak. You can find this in the `Credentials` tab.
+
+For better security, you can also uncheck the `Implicit Flow` option.
+
+==== KeyCloak users
+
+In our case, we don't need to configure users, roles, groups, etc. because authorization will be managed by the API.
+
+==== PolyCode integration - POC
+
+Now, we need to integrate KeyCloak in PolyCode. We will explain how to do this with a POC. Here is the project links :
+
+- https://gitlab.polytech.umontpellier.fr/alexis.bernard01/poc-frontend-keycloack[Polycode-keycloak]
+- https://gitlab.polytech.umontpellier.fr/alexis.bernard01/poc-backend-keycloack[Polycode-keycloak-api]
+
+To run the POC, you need first to run the backend, then the frontend, and finally the runner. The backend contains already a KeyCloak instance (not configured).
+
+Then, you can access the polycode-keycloak application at http://localhost:3001.

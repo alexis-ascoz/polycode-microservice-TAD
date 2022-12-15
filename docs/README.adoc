@@ -4,7 +4,7 @@ Alexis Bernard <alexisbernard34310@gmail.com>
 :hide-uri-scheme:
 :sectanchors: 
 :toc:
-:toclevels: 5
+:toclevels: 3
 :toc-title: Table of Contents
 
 <<<

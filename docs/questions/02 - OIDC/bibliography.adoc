@@ -13,3 +13,5 @@ https://jwt.io/introduction/[JWT - jwt.io] +
 https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-json-web-token-jwt[JWT - ibm.com] +
 https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims[Standard claims - openid.net] +
 https://connect2id.com/learn/openid-connect#endpoints[OpenID Connect endpoints - connect2id.com] +
+https://heiswayi.nrird.com/sso-with-keycloak[Keycloak - heiswayi.nrird.com] +
+https://www.keycloak.org/getting-started/getting-started-docker[Keycloak get started (docker) - keycloak.org] +

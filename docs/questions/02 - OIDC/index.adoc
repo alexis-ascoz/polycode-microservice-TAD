@@ -57,6 +57,18 @@ The authorization code flow is the most secure one. It's the one we will use in 
 .Authorization code flow
 image::images/Authorization code flow.png[]
 
+Because this flow will be used in PolyCode, we will explain it in details. Here are the steps of this flow :
+
+- The user makes a request to the client. In our case, it's a login request.
+- The client request the authorization server to get an authorization code.
+- The authorization server redirect the user to a authentication and consent page
+- The user authenticate and grant the requested scope.
+- The authorization server redirect the user to the client, with the authorization code.
+- The client send the authorization code, with the client ID and the client secret, to the authorization server.
+- The authorization server validate the client ID and the client secret.
+- The authorization server send back the access token and the refresh token (and a ID token if the scope contains openid).
+- The client can now use the access token to access the protected resource in the resource server.
+
 ===== Implicit flow
 
 The implicit flow is the most simple one. In this flow, the authorization server return directly the token. This method is not secure and should not be used in production. Here is a diagram of this flow :
@@ -121,59 +133,53 @@ Oauth 2.1 is not a new protocol, but a reference document. It's a consolidation 
 - Bearer token usage requires the use of the HTTP Authorization header field instead of the query parameter.
 - Refresh tokens must be bound to the client that requested them, or be one-time use.
 
-=== OpenID Connect (OIDC)
+=== OpenID Connect
 
-https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-openid-connect[Source IBM (smallest)] +
-https://connect2id.com/learn/openid-connect[Source]
+OpenID Connect (OIDC) is an authentication layer on top of Oauth 2.0. It's a protocol that allows clients to verify the identity of the end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.
 
-Adding to Oauth2, this provides more information about the resource owner. It’s like JWT (Json Web Token). +
-Use to make SSO (Single Sign On) = One login to use multiple others APIs = Give to user better experience because prevent for massive account creation
+==== OIDC scopes
 
-=== SSO
+There is multiple scopes in OIDC. Let's see the most common ones :
 
-Single sign-on (SSO) is an authentication method that enables users to securely authenticate with multiple applications and websites by using just one set of credentials. // TODO perhaps to develop
+.OIDC scopes
+image::images/OIDC scopes.png[]
 
 === JWT
 
-https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-json-web-token-jwt[Source IBM]
+JWT (JSON Web Token) is an open standard that define a compact and URL-safe way to represent claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object. He have a header, a payload and a signature. He also have a expiration date.
+
+The JWT is used for the authentication in OpenID Connect. His integrity is verified by the signature, then no one can modify the data.
 
 ==== Anatomy
+
+Here is an explaination of the JWT parts :
 
 .JWT decomposition
 image::images/JWT decomposition.png[]
 
 ==== Claims
 
-https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims[Standards claims]
+The payload of a JWT contains claims. Claims are statements about an entity (typically, a user) and additional metadata.
 
-image::images/image7.png[]
+There are three types of claims :
 
-image::images/image8.png[]
+- Registered claims: These are a set of predefined claims which are not mandatory but recommended. Some of them are : iss (issuer), sub (subject), aud (audience), exp (expiration time), nbf (not before), iat (issued at), and jti (JWT ID).
 
-Ask specific claim
+- Public claims: These can be defined at will by those using JWTs. This can be used to share information between parties that agree on using the same claim names.
 
-image::images/image9.png[]
+- Private claims:: These are the custom claims created to share information between parties that agree on using them and are neither registered or public claims.
 
-==== Flow
+Here is an payload of an basic ID token used in OpenID Connect, with the definition of each claims :
 
-image::images/image10.png[]
-
-1. The user makes a request to the client application.
-2. The client application redirects the request to the OpenID Connect Provider (OP) for authorization.
-3. The OP sends an authentication and authorization request to the user.
-4. The user authenticates and authorizes the client application to access the resource.
-5. The OP sends a grant code to the client application.
-6. The client application sends a request to the OP to exchange the grant code for an ID token (in the form of a JWT), an access token, and a refresh token.
-7. The OP sends the ID token (JWT), access token, and refresh token to the client application.
-8. The client application makes the request to the resource server with the JWT, which is used to authenticate the user and to authorize access to the resource.
-9. The response is sent from the resource server to the client application.
-10. The response is sent from the client application to the user.
+.ID token payload
+image::images/ID token payload.png[]
 
 ==== Endpoints
 
-https://connect2id.com/learn/openid-connect#endpoints[endpoints]
+Here is the endpoints defines in OIDC :
 
-image::images/image11.png[]
+.OIDC endpoints
+image::images/OIDC endpoints.png[]
 
 === Tools
 

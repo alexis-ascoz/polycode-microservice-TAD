@@ -7,3 +7,9 @@ https://www.loginradius.com/blog/engineering/pkce/[PKCE - loginradius.com] +
 https://www.youtube.com/watch?v=YdShQveywpo[[FR video\] Oauth 2.1 simply explained] +
 https://www.youtube.com/watch?v=t18YB3xDfXI[[EN video\] Oauth guide] +
 https://fusionauth.io/learn/expert-advice/oauth/differences-between-oauth-2-oauth-2-1#:~:text=OAuth%202.1%20is%20not%20a,a%20reference%20document%20going%20forward[OAuth 2.1 - fusionauth.io] +
+https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-openid-connect[Short explanation of OIDC - ibm.com] +
+https://connect2id.com/learn/openid-connect[OpenID Connect - connect2id.com] +
+https://jwt.io/introduction/[JWT - jwt.io] +
+https://www.ibm.com/docs/en/cics-ts/6.1?topic=cics-json-web-token-jwt[JWT - ibm.com] +
+https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims[Standard claims - openid.net] +
+https://connect2id.com/learn/openid-connect#endpoints[OpenID Connect endpoints - connect2id.com] +

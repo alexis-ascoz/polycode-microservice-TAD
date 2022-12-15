@@ -369,4 +369,4 @@ The following table contains the most of the user stories of PolyCode. It is not
 
 === Functional quarters
 
-=== Architecture diagram of PolyCode in microservices
+=== PolyCode microservices architecture

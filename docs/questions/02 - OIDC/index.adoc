@@ -81,13 +81,6 @@ The hybrid flow is the same as authorization code flow, but there is a token ser
 .Hybrid flow
 image::images/Hybrid flow.png[]
 
-==== Refresh token
-
-Once the user is authenticated, the authorization server return an access token, valid for a certain amount of time. Once this token expires, the client can ask for a new one, using the refresh token. Here is a diagram of the flow to get a new token :
-
-.Refresh and access token
-image::images/Refresh and access token.png[]
-
 ==== Scope
 
 A access token permits to access to a protected resource. But, it's not enough to access to all the resources. The authorization server can restrict the access, depending on the scope of the access token.
@@ -123,6 +116,13 @@ Here is an payload of an basic ID token used in OpenID Connect, with the definit
 
 .ID token payload
 image::images/ID token payload.png[]
+
+==== Refresh token
+
+Once the user is authenticated, the authorization server return an access token, valid for a certain amount of time. Once this token expires, the client can ask for a new one, using the refresh token. Here is a diagram of the flow to get a new token :
+
+.Refresh and access token
+image::images/Refresh and access token.png[]
 
 === PKCE
 

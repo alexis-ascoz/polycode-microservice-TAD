@@ -211,6 +211,14 @@ Here is a list of other possible solutions :
 
 For now, we use an Oauth2 system, with our own implementation. We will migrate this to KeyCloak, to have a more robust and scalable solution. Note that we will not migrate the authorization part, because is not the purpose here.
 
+// TODO : Following todos not here
+
+// TODO : Add a diagram wanted polycode architecture in microservices
+
+// TODO : Add deployment diagram of polycode and OIDC
+
+// TODO : Add all sequence diagrams
+
 To do this, we will follow multiple steps. This document is based on the https://www.keycloak.org/getting-started/getting-started-docker[official KeyCloak documentation].
 
 ==== Setup KeyCloak

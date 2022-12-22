@@ -10,8 +10,6 @@ Guest:: Someone who doesn't have a PolyCode account.
 
 User:: Someone who has a PolyCode account.
 
-Admin:: A privilegied user that can manage all the resources of PolyCode.
-
 Module:: A coherent set of module and contents, organized in a tree structure. A module can be a challenge, a practice, a certification, a submodule, a test, etc.
 
 Content:: A coherent set of components, organized in a tree structure. It's a branch of the tree that are the modules. A content can be an exercice, a lesson, a question, etc.
@@ -54,317 +52,302 @@ Captain:: A user who can manage his team.
 
 The following table contains the most of the user stories of PolyCode. It is not exhaustive, but it contains the most important user stories.
 
+[discrete]
+==== Account / User
 [cols="1,2,2", options="header"]
 |===
 ^.^| As                 ^.^| I want
                         ^.^| So that
 
 ^.^| Guest              ^.^| Create my account
-                        ^.^| Connect to my account.
+                        ^.^| Connect to my account
 
-^.^| User               ^.^| Connect to my account with my email and my password
-                        ^.^| Use the PolyCode features.
+^.^| User               ^.^| Show my account details
+                        ^.^| See my user information, like my email or my account settings
 
-^.^| User               ^.^| Logout from my account
-                        ^.^| Remove my session and go back as a guest.
-
-^.^| User               ^.^| Reset my password
-                        ^.^| Edit my credentials.
-
-^.^| User               ^.^| Show my profile
-                        ^.^| See my user information.
-
-^.^| User               ^.^| Update my profile, emails or user settings.
-                        ^.^| Edit my user information.
-
-^.^| User               ^.^| Receive a welcome email when I sign up
-                        ^.^| Know that my account is created.
-
-^.^| User               ^.^| Show a user profile
-                        ^.^| Get some information about a user (pseudo, rank, etc).
+^.^| User               ^.^| Update my account details
+                        ^.^| Edit my user information, like my email or my account settings
 
 ^.^| User               ^.^| Delete my account
-                        ^.^| Delete my user information.
+                        ^.^| Delete my user information
 
-^.^| User               ^.^| Create a new team
-                        ^.^| Become a captain of a team.
+^.^| User               ^.^| Connect to my account with my email and my password
+                        ^.^| Use the PolyCode features
 
-^.^| Captain            ^.^| Invite other users in my team
-                        ^.^| Grow my team and make it more active.
+^.^| User               ^.^| Logout from my account
+                        ^.^| Remove my session and come back as a guest
 
-^.^| Captain            ^.^| Kick a member from my team
-                        ^.^| Remove a member who is not active anymore or who is not a good fit for the team.
+^.^| User               ^.^| Reset my password
+                        ^.^| Edit my credentials
 
-^.^| Captain            ^.^| Give the captain role to another member of my team
-                        ^.^| Promote a member who is more active than me.
-
-^.^| Captain            ^.^| Delete my team
-                        ^.^| Dissolve my team.
-
-^.^| Captain            ^.^| Update my team details
-                        ^.^| Edit my team information.
-
-^.^| User               ^.^| Accept an invitation to join a team
-                        ^.^| Join a team.
-
-^.^| User               ^.^| Reject an invitation to join a team
-                        ^.^| Don't join a team.
-
-^.^| User               ^.^| Leave a team
-                        ^.^| No longer be a member of a team.
-
-^.^| User               ^.^| Show a team profile
-                        ^.^| Get some information about a team (name, rank, etc).
-
-^.^| User               ^.^| Show the ranking of the teams
-                        ^.^| Compare my team with other teams.
+^.^| User               ^.^| Show an account profile
+                        ^.^| Get some information about a user (pseudo, rank, etc)
 
 ^.^| User               ^.^| Show the ranking of the users
-                        ^.^| Compare my rank with other users.
+                        ^.^| Compare my rank with other users
+|===
 
-^.^| User               ^.^| Show content list
-                        ^.^| Choose an content to do.
+[discrete]
+==== Team
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
+
+^.^| User               ^.^| Create a new team
+                        ^.^| Become a captain of a team
+
+^.^| User               ^.^| Show my team details
+                        ^.^| See my team information, like the name or the description
+
+^.^| Captain            ^.^| Update my team details
+                        ^.^| Edit my team information
+
+^.^| Captain            ^.^| Delete my team
+                        ^.^| Dissolve my team
+
+^.^| Captain            ^.^| Invite other users in my team
+                        ^.^| Grow my team and make it more active
+
+^.^| Captain            ^.^| Kick a member from my team
+                        ^.^| Remove a member who is not active anymore or who is not a good fit for my team
+
+^.^| User               ^.^| Accept an invitation to join a team
+                        ^.^| Join a team
+
+^.^| User               ^.^| Reject an invitation to join a team
+                        ^.^| Don't join a team
+
+^.^| User               ^.^| Leave a team
+                        ^.^| No longer be a member of a team
+
+^.^| Captain            ^.^| Give the captain role to another member of my team
+                        ^.^| Promote a member of my team who is more active than me
+
+^.^| User               ^.^| Show a team profile
+                        ^.^| Get some information about a team (name, rank, etc)
+
+^.^| User               ^.^| Show the ranking of the teams
+                        ^.^| Compare my team with other teams
+|===
+
+[discrete]
+==== Practice
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
+
+^.^| Content creator    ^.^| Create a content with some components
+                        ^.^| Provide a way to learn or practice a specific notion or a specific language
+
+^.^| Content creator    ^.^| Edit one of my contents
+                        ^.^| Update my content information
+
+^.^| Content creator    ^.^| Delete one of my contents
+                        ^.^| Remove my content that is not useful anymore
+
+^.^| Content creator    ^.^| Create a module
+                        ^.^| Organize contents by notion or by language
+
+^.^| Content creator    ^.^| Edit one of my modules
+                        ^.^| Update my module information
+
+^.^| Content creator    ^.^| Delete one of my modules
+                        ^.^| Remove my module that is not useful anymore
+
+^.^| Content creator    ^.^| Add a sub-module to one of my modules
+                        ^.^| Aggregate modules into my module
+
+^.^| Content creator    ^.^| Add a content to one of my modules or sub-modules
+                        ^.^| Aggregate contents into my module or my sub-module
 
 ^.^| User               ^.^| Show module list
-                        ^.^| Choose a module to do.
+                        ^.^| Choose a module to do
 
 ^.^| User               ^.^| Show the description of a module
-                        ^.^| Take information about the module.
+                        ^.^| Take information about the module
 
-^.^| User               ^.^| Show test list
-                        ^.^| Choose a test to do.
-
-^.^| User               ^.^| Show new modules and contents
-                        ^.^| Find modules that I never did.
+^.^| User               ^.^| Show content list
+                        ^.^| Choose an content to do
 
 ^.^| User               ^.^| Show the description of a content
-                        ^.^| Take information about the content.
+                        ^.^| Take information about the content
+                        
+^.^| User               ^.^| Show new modules and contents
+                        ^.^| Find modules that I never did
+
+^.^| User               ^.^| Add files to the code editor
+                        ^.^| Write my code solution in multiple files
+
+^.^| User               ^.^| Remove files from the code editor
+                        ^.^| Remove files that I don't need anymore
+
+^.^| User               ^.^| Follow my progression in modules and contents
+                        ^.^| Know how much I have done
+|===
+
+[discrete]
+==== Assessment
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
+
+^.^| Assessment creator ^.^| Create a test
+                        ^.^| Create an exam to test candidate's knowledge
+                        
+^.^| Assessment creator ^.^| Edit one of my tests
+                        ^.^| Update my test information
+
+^.^| Assessment creator ^.^| Delete one of my tests
+                        ^.^| Remove my test that is not useful anymore
+
+^.^| Assessment creator ^.^| Set a time limit of my tests
+                        ^.^| Candidates have to conclude the test in a limited time
+
+^.^| Assessment creator ^.^| Set a time limit for each question of a test
+                        ^.^| Candidates have to answer to a question in a limited time
+
+^.^| Assessment creator ^.^| Set an amount of points for each question of a test
+                        ^.^| Candidates cumulate points through the test
+
+^.^| Assessment creator ^.^| Create a campaign
+                        ^.^| Evaluate a group of candidates
+
+^.^| Assessment creator ^.^| Edit one of my campaigns
+                        ^.^| Update my campaign information
+
+^.^| Assessment creator ^.^| Delete one of my campaigns
+                        ^.^| Remove a campaign that is not useful anymore
+
+^.^| Assessment creator ^.^| Set a start date for one of my campaigns
+                        ^.^| Start automatically my campaign at a specific date, candidates can then start the test
+
+^.^| Assessment creator ^.^| Add candidates to one of my campaigns by web interface
+                        ^.^| Make candidates participate to my campaign
+
+^.^| Assessment creator ^.^| Add candidates to one of my campaigns by csv file
+                        ^.^| Make candidates participate to my campaign
+
+^.^| Assessment creator ^.^| Add candidates to one of my campaigns by api call
+                        ^.^| Make candidates participate to my campaign
+
+^.^| Assessment creator ^.^| Remove candidates from one of my campaigns by web interface
+                        ^.^| Remove candidates from my campaign
+
+^.^| Assessment creator ^.^| Remove candidates from one of my campaigns by csv file
+                        ^.^| Remove candidates from my campaign
+
+^.^| Assessment creator ^.^| Remove candidates from one of my campaigns by api call
+                        ^.^| Remove candidates from my campaign
+
+^.^| Assessment creator ^.^| Add tags to candidates in one of my campaigns
+                        ^.^| Organize candidates of my campaign in groups
+
+^.^| Candidate          ^.^| Accept a campaign invitation
+                        ^.^| Participate in a campaign
+
+^.^| Candidate          ^.^| Decline a campaign invitation
+                        ^.^| Do not participate in a campaign
+
+^.^| User               ^.^| Show test list
+                        ^.^| Choose a test to do
 
 ^.^| User               ^.^| Show the description of a test
-                        ^.^| Take information about the test.
+                        ^.^| Take information about the test
 
-^.^| User               ^.^| Submit a solution to a component
-                        ^.^| Complete a content then earn polypoints.
+^.^| User               ^.^| Start a test of a campaign of which I am a candidate
+                        ^.^| Participate in a campaign
 
-^.^| User               ^.^| For a code editor, submit a solution for only one validator
-                        ^.^| Check if my solution is correct for a specific validator.
+^.^| Candidate          ^.^| Come back to a test of a campaign that I didn't finish
+                        ^.^| Finish a test that I didn't finish before
+|===
 
-^.^| User               ^.^| Show the last submissions of a component who passed all validators
-                        ^.^| Improve my old solution.
+[discrete]
+==== Submission
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
 
+^.^| User               ^.^| Submit a solution to a submitable
+                        ^.^| Complete a content then earn polypoints, or complete a test
 
+^.^| User               ^.^| For a code editor, submit a solution for a specific validator
+                        ^.^| Check if my solution is correct for this validator
 
+^.^| User               ^.^| Show the last submissions of a submitable who passed all validators
+                        ^.^| Improve my old solution and submit it again
+|===
 
+[discrete]
+==== Stats
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
 
-^.^| User               ^.^| Écrire (et modifier) sa solution de code dans un éditeur intégré à la page de l'exercice (cas d'exercice de code)
-                        ^.^| proposer une solution à l'exercice
+^.^| Assessment creator ^.^| See the results of one of my campaigns in raw data
+                        ^.^| Analyze the results of my campaign to have a first overview
 
-^.^| User               ^.^| ajouter des fichiers dans l'éditeur (exercice)
-                        ^.^| Organiser la solution en plusieurs fichiers
+^.^| Assessment creator ^.^| See the results of one of my campaigns in raw data in a chart
+                        ^.^| Analyze the results of my campaign in a more visual way
 
-^.^| User               ^.^| supprimer des fichiers dans l'éditeur
-                        ^.^| Organiser la solution en plusieurs fichiers
+^.^| Assessment creator ^.^| Sort candidates in one of my campaigns (by tag, by score, by time, etc.)
+                        ^.^| Find best candidates easily
 
-^.^| User               ^.^| acheter des données de validateur (entrée + sortie) avec des PolyPoints ⇒ hint
-                        ^.^| comprendre mieux comment résoudre l'exercice
+^.^| Assessment creator ^.^| Export a general report of one of my campaign in a pdf
+                        ^.^| Save the results of my campaign
 
-^.^| User               ^.^| suivre ma progression dans chacun des modules
-                        ^.^| Voir ce qui est complété / à faire
+^.^| Assessment creator ^.^| Export a detailed report of one of my campaign in a pdf
+                        ^.^| Save the results of my campaign
 
-^.^| User               ^.^| voir le classement global des utilisateurs (par polypoints)
-                        ^.^| Motivation à atteindre le sommet (principe de concurrence)
+^.^| Assessment creator ^.^| Export a detailed report of one of my campaign in a csv
+                        ^.^| Save the results of my campaign and use it in a spreadsheet
+|===
 
-^.^| User               ^.^| passer une évaluation
-                        ^.^| obtenir une certification
+[discrete]
+==== Shop
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
 
-^.^| User               ^.^| lire le contenu d'un cours
-                        ^.^| monter en compétence sur un sujet
+^.^| User               ^.^| Buy hints for a submitable with polypoints
+                        ^.^| Get some help to solve a submitable
+|===
 
-^.^| Content creator    ^.^| créer un exercice, et y ajouter du markdown, un code editor, un QCM organisé dans des conteneurs
-                        ^.^| Proposer l'apprentissage d'une nouvelle notion, faire vérifier la connaissance de cette notion par une question/ un code à écrire
+[discrete]
+==== Mailer
+[cols="1,2,2", options="header"]
+|===
+^.^| As                 ^.^| I want
+                        ^.^| So that
 
-^.^| Content creator    ^.^| créer un module
-                        ^.^| Organiser les exercices par notion majeure / thématique
+^.^| User               ^.^| Receive a welcome email when I sign up
+                        ^.^| Know that my account is created
 
-^.^| Assessment creator ^.^| créer une évaluation
-                        ^.^| vérifier les compétence d'un utilisateur sur un contenu
+^.^| User               ^.^| Receive an email to confirm my email address
+                        ^.^| Verify that my email address is correct
 
-^.^| Content creator    ^.^| ajouter ses exercices à un module qu'il a créé
-                        ^.^| remplir le contenu d'un module en ensemble d'élément cohérent
+^.^| User               ^.^| Receive an email when I'm invited in an team
+                        ^.^| Get notified and get links to accept or decline the invitation
 
-^.^| Content creator    ^.^| ajouter des modules dans un module, et ce avec des modules qu'il a créé (sous-module)
-                        ^.^| remplir le contenu d'un module en ensemble d'élément cohérent
+^.^| User               ^.^| Receive an email when I'm kicked out of a team
+                        ^.^| Get notified when I'm removed from a team
 
-^.^| Content creator    ^.^| modifier le nom, la description, le nombre de PolyPoints de récompense, les tags, le contenu (exercices et sous-module) de ses modules
-                        ^.^| Garder à jour un module
+^.^| User               ^.^| Receive an email when my team is dissolved
+                        ^.^| Get notified when my team is deleted
 
-^.^| Content creator    ^.^| modifier le titre, la description, le contenu, récompense en polypoints,  les validateurs, les tags d'un exercice
-                        ^.^| Garder à jour un exercice
-                        
-^.^| Content creator    ^.^| modifier le titre, la description, le contenu d'une évaluation
-                        ^.^| Garder à jour une évaluation
+^.^| Candidate          ^.^| Receive an email when I'm invited in a campaign
+                        ^.^| Get notified and get links to accept or decline the invitation
 
-^.^| Content creator    ^.^| supprimer un exercice qu'il a créé
-                        ^.^| Réparer une erreur / ne plus vouloir la présence de ce contenu
+^.^| Assessment creator ^.^| Send again a campaign invitation email to a candidate
+                        ^.^| Be sure that a candidate has received the invitation
 
-^.^| Content creator    ^.^| supprimer un module qu'il a créé
-                        ^.^| Réparer une erreur / ne plus vouloir la présence de ce contenu
-
-^.^| Content creator    ^.^| supprimer une évaluation qu'il a créé
-                        ^.^| Réparer une erreur / ne plus vouloir la présence de ce contenu
-
-^.^| Content creator    ^.^| voir le résultat des utilisateurs sur une évaluation qu'il a créé
-                        ^.^| Pour que le recruteur / professeur voie le résultat des élèves pour attribuer une note / recruter
-
-^.^| Admin              ^.^| Promouvoir un utilisateur en rédacteur
-                        ^.^| qu'un utilisateur ai les droits d'un “redacteur”
-
-^.^| Admin              ^.^| Promouvoir un utilisateur en admin
-                        ^.^| qu'un utilisateur ai les droits d'un “admin”
-
-^.^| Admin              ^.^| Créer un utilisateur
-                        ^.^| Utiliser l'application avec un autre compte
-
-^.^| Admin              ^.^| Récupérer les données d'un utilisateur
-                        ^.^| Voir les informations confidentielles d'un compte utilisateur
-
-^.^| Admin              ^.^| Mettre à jour les données d'un utilisateur
-                        ^.^| Mettre à jour les informations personnelles afin qu'elles soient cohérentes
-
-^.^| Admin              ^.^| Supprimer un utilisateur
-                        ^.^| Ne plus donner accès à la plateforme pour un compte utilisateur
-
-^.^| Admin              ^.^| Créer un exercice
-                        ^.^| Proposer l'apprentissage d'une nouvelle notion, faire vérifier la connaissance de cette notion par une question/ un code à écrire
-
-^.^| Admin              ^.^| modifier le titre, la description, le contenu, récompense en polypoints,  les validateurs, les tags d'un exercice
-                        ^.^| Garder à jour un exercice
-
-^.^| Admin              ^.^| Créer un module
-                        ^.^| Créer un module afin de regrouper des contenus
-
-^.^| Admin              ^.^| Récupérer les données d'un module
-                        ^.^| Voir les informations et les contenus associés à ce module
-
-^.^| Admin              ^.^| Mettre à jour les données d'un module
-                        ^.^| Garde le module à jour
-
-^.^| Admin              ^.^| Supprimer un module
-                        ^.^| Effacer les traces du module sur la plateforme
-
-^.^| Admin              ^.^| Créer une évaluation
-                        ^.^| vérifier les compétence d'un utilisateur sur un contenu
-
-^.^| Admin              ^.^| Récupérer les données d'une évaluation
-                        ^.^| Voir les différentes données en lien avec une évaluation
-
-^.^| Admin              ^.^| Mettre à jour les données d'une évaluation
-                        ^.^| Ajouter des utilisateurs ou modifier des données relatives à une évaluation
-
-^.^| Admin              ^.^| Supprimer une évaluation
-                        ^.^| Enlever une évaluation de la plateforme
-
-^.^| Admin              ^.^| Créer une team
-                        ^.^| Rassembler des utilisateurs dans une équipe
-
-^.^| Admin              ^.^| Ajouter un membre dans mon équipe
-                        ^.^| Proposer à un utilisateur de rejoindre mon équipe
-
-^.^| Admin              ^.^| Supprimer un membre d'une team
-                        ^.^| Enlever un utilisateur de mon équipe pour une quelconque raison
-
-^.^| Admin              ^.^| Supprimer une team
-                        ^.^| Supprimer une team qui ne valide pas les conditions d'utilisation
-
-^.^| Admin              ^.^| Modifier la description d'une équipe
-                        ^.^| Avoir une description à jour de l'équipe
-
-^.^| Assessment creator ^.^| créer une campagne de test
-                        ^.^| Evaluer le niveau des utilisateurs
-
-^.^| Assessment creator ^.^| ajouter des utilisateurs à ma campagne via une interface web
-                        ^.^| Faire participer les candidats
-
-^.^| Assessment creator ^.^| supprimer des utilisateurs à ma campagne via une interface web
-                        ^.^| Enlever un candidat des participants
-
-^.^| Assessment creator ^.^| ajouter des utilisateurs à ma campagne via des appels API
-                        ^.^| Faire participer les candidats
-
-^.^| Assessment creator ^.^| supprimer des utilisateurs à ma campagne via des appels API
-                        ^.^| Enlever un candidat des participants
-
-^.^| Assessment creator ^.^| ajouter des utilisateurs à ma campagne via l'importation de fichiers csv
-                        ^.^| Faire participer les candidats
-
-^.^| Assessment creator ^.^| voir les résultats et statistiques sur la campagne que j'ai créé
-                        ^.^| Me rendre compte du niveau des candidats testés
-
-^.^| Assessment creator ^.^| ajouter des tags à mes candidats
-                        ^.^| Grouper les candidats
-
-^.^| Assessment creator ^.^| définir une date limite pour ma campagne
-                        ^.^| Clôturer ma campagne à une date fixe
-
-^.^| Candidate          ^.^| revenir sur un test et reprendre là où j'en était
-                        ^.^| Finir mon test si jamais je quitte l'application
-
-^.^| Assessment creator ^.^| définir un temps limite pour chaque question de ma campagne
-                        ^.^| Les candidats répondent dans un temps limité
-
-^.^| Assessment creator ^.^| définir un nb de points pour chaque question
-                        ^.^| Avoir un score par candidats et voir leur différence de score à la fin de la campagne
-
-^.^| Candidate          ^.^| recevoir un mail me permettant de participer à une campagne de tests
-                        ^.^| Avoir un lien pour participer à une campagne
-
-^.^| Candidate          ^.^| Accepter de participer à une campagne
-                        ^.^| Tester ses compétences à travers une campagne
-
-^.^| Candidate          ^.^| Refuser de participer à une campagne
-                        ^.^| Avoir la possibilité de refuser une campagne et que le créateur en soit informé
-
-^.^| Assessment creator ^.^| Éditer ma campagne, les tests liés
-                        ^.^| Modifier une campagne précédemment créée
-
-^.^| Assessment creator ^.^| Définir une date de début de ma campagne
-                        ^.^| Définir une date pour les candidats, ainsi qu'un temps imparti pour finaliser la campagne
-
-^.^| Assessment creator ^.^| Envoyer des liens de ma campagne manuellement à mes candidats
-                        ^.^| S'assurer que les candidats reçoivent bien le lien pour participer à une campagne
-
-^.^| Candidate          ^.^| Recevoir un mail de confirmation contenant des stats quand j'ai soumis mon test
-                        ^.^| Notifier l'utilisateur que sa participation et ses réponses ont bien été enregistrées pour une campagne
-
-^.^| Assessment creator ^.^| Voir le nombre de points totaux par candidats
-                        ^.^| Comparer les points des candidats ayant participé à la campagne
-
-^.^| Assessment creator ^.^| Visualiser un graphique/un excel par tags de content et par candidats
-                        ^.^| Voir graphiquement les différents résultats
-                        
-^.^| Assessment creator ^.^| Exporter les résultats synthétisés dans un pdf
-                        ^.^| Sauvegarder les résultats des candidats et avoir une vue synthétique
-
-^.^| Assessment creator ^.^| Exporter les résultats détaillés dans un pdf
-                        ^.^| Sauvegarder les résultats des candidats et y avoir accès sans passer par l'application
-
-^.^| Assessment creator ^.^| Avoir une vue comparative des candidats sous la forme d'un tableau excel
-                        ^.^| Comparer les score des candidats à travers un tableau
-
-^.^| Assessment creator ^.^| Trier la liste des candidats par tags, résultats
-                        ^.^| Comparer les résultats des candidats en fonction de données précises
-
-^.^| Assessment creator ^.^| télécharger les scores des candidats
-                        ^.^| afin de garder les stats en local
-
-^.^| User               ^.^| recevoir un mail quand je suis invité dans une team
-                        ^.^| Etre prévenu que je peux rejoindre une équipe
-
-^.^| User               ^.^| recevoir un mail quand une équipe dans laquelle je suis es supprimée
-                        ^.^| Etre averti que mon équipe à été supprimée
-
-^.^| User               ^.^| recevoir un mail quand je suis radié d'une équipe
-                        ^.^| Etre averti que j'ai été éjecté d'une équipe
+^.^| Candidate          ^.^| Receive an email when my participation in the test of a campaign is received
+                        ^.^| Be sure that I have send my answers
 |===
 
 === Functional quarters

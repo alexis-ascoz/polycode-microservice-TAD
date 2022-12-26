@@ -50,10 +50,11 @@ Captain:: A user who can manage his team.
 
 === User stories
 
-The following table contains the most of the user stories of PolyCode. It is not exhaustive, but it contains the most important user stories.
+The following tables contains the most of the user stories of PolyCode. It is not exhaustive, but it contains the most important user stories.
+She is organized by functional quarters.
 
 [discrete]
-==== Account / User
+==== Account
 [cols="1,2,2", options="header"]
 |===
 ^.^| As                 ^.^| I want
@@ -350,6 +351,12 @@ The following table contains the most of the user stories of PolyCode. It is not
                         ^.^| Be sure that I have send my answers
 |===
 
-=== Functional quarters
-
 === PolyCode microservices architecture
+
+Below is a proposed architecture for PolyCode microservices.
+
+.PolyCode microservice architecture schema
+image::images/PolyCode microservice architecture schema.png[]
+
+In a first time, we will only detach the authentication microservice from the main application. The other microservices will be detached later.
+The authorization part will be migrated to the authentication microservice in a second time.

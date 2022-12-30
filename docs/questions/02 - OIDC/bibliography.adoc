@@ -15,3 +15,4 @@ https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims[Standard cl
 https://connect2id.com/learn/openid-connect#endpoints[OpenID Connect endpoints - connect2id.com] +
 https://heiswayi.nrird.com/sso-with-keycloak[Keycloak - heiswayi.nrird.com] +
 https://www.keycloak.org/getting-started/getting-started-docker[Keycloak get started (docker) - keycloak.org] +
+https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adod[Active Directory - microsoft.com] +

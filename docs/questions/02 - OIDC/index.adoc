@@ -179,6 +179,12 @@ Here is the endpoints defines in OIDC :
 .OIDC endpoints
 image::images/OIDC endpoints.png[]
 
+=== LDAP
+
+LDAP (Lightweight Directory Access Protocol) is a protocol that allows to access to a directory service. It's a client-server protocol, and the client can be a user or an application.
+
+In the case of PolyCode, we will use the polytech LDAP server to manage the users and groups of our applications. In this way, any guest who has an account on the Polytech network can access to polycode without creating a new account.
+
 === Tools
 
 There is multiple tools to help you to implement Oauth 2.0 and OpenID Connect in your application. This part will explain the most common ones and how to use them.
@@ -211,13 +217,16 @@ Here is a list of other possible solutions :
 
 For now, we use an Oauth2 system, with our own implementation. We will migrate this to KeyCloak, to have a more robust and scalable solution. Note that we will not migrate the authorization part, because is not the purpose here.
 
-// TODO : Following todos not here
+==== Architecture
 
-// TODO : Add a diagram wanted polycode architecture in microservices
+Here is a diagram of the wanted architecture :
 
-// TODO : Add deployment diagram of polycode and OIDC
+.PolyCode authentication architecture schema
+image::images/PolyCode authentication architecture schema.png[]
 
-// TODO : Add all sequence diagrams
+The goal is to have a KeyCloak instance, with a client for each service. Each service will have a client secret, and will use it to authenticate to KeyCloak.
+
+The user, when he wants to access to some resources, will be redirected to KeyCloak. He will authenticate with his credentials (or create new), and will be redirected back to the PolyCode UI with a code. The UI will then exchange this code with KeyCloak, and will get an access token. This token will be used to authenticate to PolyCode, verify by KeyCloak against the Polycode API, and will be used to access to the resources.
 
 To do this, we will follow multiple steps. This document is based on the https://www.keycloak.org/getting-started/getting-started-docker[official KeyCloak documentation].
 
@@ -266,3 +275,58 @@ Now, we need to integrate KeyCloak in PolyCode. We will explain how to do this w
 To run the POC, you need first to run the backend, then the frontend, and finally the runner. The backend contains already a KeyCloak instance (not configured).
 
 Then, you can access the polycode-keycloak application at http://localhost:3001.
+
+==== Deployments
+
+Here is the deployment diagram of the future PolyCode authentication architecture :
+
+.PolyCode authentication deployment schema
+image::images/PolyCode authentication deployment schema.png[]
+
+All communications between those services are in HTTP, and are secured with TLS.
+
+==== Sequence diagrams
+
+Here is some sequence diagrams to explain the differences between the authentication process modes.
+
+===== Vanilla user account creation
+
+Here is the sequence diagram of the user account creation :
+
+.PolyCode authentication sequence diagram - Vanilla user account creation
+image::images/PolyCode authentication sequence diagram - Vanilla user account creation.png[]
+
+===== User account creation via polytech LDAP
+
+Here is the sequence diagram of the user account creation via polytech LDAP :
+
+.PolyCode authentication sequence diagram - User account creation via polytech LDAP
+image::images/PolyCode authentication sequence diagram - User account creation via polytech LDAP.png[]
+
+===== User account creation via google
+
+Here is the sequence diagram of the user account creation via google :
+
+.PolyCode authentication sequence diagram - Google identity provider user account creation
+image::images/PolyCode authentication sequence diagram - Google identity provider user account creation.png[]
+
+===== Vanilla user authentication
+
+Here is the sequence diagram of the user authentication :
+
+.PolyCode authentication sequence diagram - Vanilla user authentication
+image::images/PolyCode authentication sequence diagram - Vanilla user authentication.png[]
+
+===== Polytech LDAP user authentication
+
+Here is the sequence diagram of the Polytech LDAP user authentication :
+
+.PolyCode authentication sequence diagram - Polytech LDAP user authentication
+image::images/PolyCode authentication sequence diagram - Polytech LDAP user authentication.png[]
+
+===== User authentication via google
+
+Here is the sequence diagram of the user authentication via google :
+
+.PolyCode authentication sequence diagram - User authentication via google
+image::images/PolyCode authentication sequence diagram - User authentication via google.png[]

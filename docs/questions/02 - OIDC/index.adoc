@@ -300,8 +300,8 @@ image::images/PolyCode authentication sequence diagram - Vanilla user account cr
 
 Here is the sequence diagram of the user account creation via polytech LDAP :
 
-.PolyCode authentication sequence diagram - User account creation via polytech LDAP
-image::images/PolyCode authentication sequence diagram - User account creation via polytech LDAP.png[]
+.PolyCode authentication sequence diagram - Polytech LDAP account creation
+image::images/PolyCode authentication sequence diagram - Polytech LDAP account creation.png[]
 
 ===== User account creation via google
 
@@ -328,5 +328,5 @@ image::images/PolyCode authentication sequence diagram - Polytech LDAP user auth
 
 Here is the sequence diagram of the user authentication via google :
 
-.PolyCode authentication sequence diagram - User authentication via google
-image::images/PolyCode authentication sequence diagram - User authentication via google.png[]
+.PolyCode authentication sequence diagram - Google identity provider user authentication
+image::images/PolyCode authentication sequence diagram - Google identity provider user authentication.png[]

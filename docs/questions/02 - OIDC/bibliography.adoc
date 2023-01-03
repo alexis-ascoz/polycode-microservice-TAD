@@ -16,3 +16,4 @@ https://connect2id.com/learn/openid-connect#endpoints[OpenID Connect endpoints -
 https://heiswayi.nrird.com/sso-with-keycloak[Keycloak - heiswayi.nrird.com] +
 https://www.keycloak.org/getting-started/getting-started-docker[Keycloak get started (docker) - keycloak.org] +
 https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adod[Active Directory - microsoft.com] +
+https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adod/1fd2c193-fc70-4f90-a8c8-f1ca2de4e5ac[Active Directory: Provision a user - microsoft.com] +

@@ -2,7 +2,67 @@
 
 Inter-process communication (IPC) refers to the mechanisms used by different processes to communicate with each other. Here, we approach this subject within the context of a microservice architecture application. This is important because microservices are typically designed to be independently deployable and scalable, which means they are often deployed on different machines or in different locations.
 
-There is a wide range of IPC mechanisms available, and each has its own advantages and disadvantages. Here, we will focus on the most popular ones, by category.
+=== Methods
 
-=== Synchonous communication
+There is a wide range of IPC mechanisms available, and each has its own advantages and disadvantages. Here, we will focus on the most popular ones, by category. We will also compare them in terms of their suitability for microservices architectures.
 
+==== Synchonous communication
+
+Synchronous communication is a type of communication where the sender service waits for a response from the invoker service before continuing. There are two main mechanisms for synchronous communication: REST and RPC.
+
+===== REST
+
+REST (Representational State Transfer) is a architectural style that defines a set of constraints to be used for creating Web services. RESTful Web services allow the requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of operations. RESTful Web services are stateless, which means that the server does not need to know anything about the state of the client that is making the request.
+
+In the context of REST, a resource is a piece of data that can be accessed via a unique identifier, such as a URL. Resources are manipulated using a set of standard HTTP methods, such as GET, POST, PUT, and DELETE. These methods are used to retrieve, create, update, and delete resources, respectively.
+
+REST APIs use HTTP as the communication protocol and can support a wide range of data formats, including JSON and XML. They are simple and lightweight, making them well-suited for use in microservices architectures.
+
+Overall, REST is a widely used and well-established approach for building web services, and it is particularly well-suited for microservices because of its simplicity and flexibility.
+
+Rest is guided by the 6 following principles:
+
+* Client-server: The client and server are independent of each other. The two systems can be developed and deployed independently. A client should know only resource URIs, and that's all.
+* Stateless: The server does not store any client context between requests. Each request from the client to the server must contain all the information necessary to understand the request, and the server must respond to that request as new.
+* Cacheable: The server must indicate if a response can be cached or not. If a response is cacheable, then a client or a server side cache can store it and reuse it later, saving bandwidth and server resources.
+* Uniform interface: The interface between the client and the server must be uniform. This means that the interface should be simple and intuitive. The interface should be independent of the underlying implementation.
+* Layered system: The client should not be aware of the underlying layers of the system. The client should only be aware of the immediate layer with which it is communicating. For example, a client cannot ordinarily tell whether it is connected directly to the end server or an intermediary along the way.
+* Code on demand (optional): The server can optionally return executable code to the client. This code can be used to extend the functionality of the client.
+
+===== RPC
+
+RPC (Remote Procedure Call) is a mechanism for a computer program to call and execute a procedure (subroutine) in another program, through the network. For a developer, the call is like a normal local procedure call, without any details for the remote interaction. The RPC mechanism make agnostic the developer about the language, the platform, the network, the operating system, etc.
+
+RPC is used in microservices architecture applicaions to communicate between processes running on different computers over a network. As a procedure, RPC is a synchronous communication mechanism, which means that the sender service waits for a response from the invoker service before continuing.
+
+gRPC is a modern, open source, high-performance remote procedure call (RPC) framework that can run in any environment. It can efficiently connect services with pluggable support for load balancing, tracing, health checking, and authentication.
+
+By default, gRPC uses proto files to define services and messages.
+
+==== Asynchronous communication
+
+===== Message queues
+
+===== Event-driven architecture
+
+==== Streaming
+
+===== Kafka
+
+===== RabbitMQ
+
+===== Kinesis
+
+=== Microservices architecture patterns
+
+==== Circuit breaker
+
+==== Bulkhead
+
+==== Service discovery
+
+==== API gateway
+
+==== Service mesh
+
+==== Sidecar

@@ -2,3 +2,7 @@
 IPC
 
 https://vishnuch.tech/interprocess-communication-in-microservices[IPC in Microservices - vishnuch.tech] +
+https://www.redhat.com/en/topics/api/what-is-a-rest-api[What is a REST API? - Red Hat] +
+https://restfulapi.net/rest-architectural-constraints/[REST Architectural Constraints - restfulapi.net] +
+https://grpc.io/docs/what-is-grpc/introduction/[What is gRPC? - gRPC.io] +
+https://developers.google.com/protocol-buffers/docs/overview[Protocol Buffers - developpers.google.com] +

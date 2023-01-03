@@ -18,8 +18,12 @@ include::questions/00 - Introduction/index.adoc[]
 include::questions/01 - Functional quarters/index.adoc[]
 
 <<<
-:imagesdir: questions/02 - OIDC
-include::questions/02 - OIDC/index.adoc[]
+:imagesdir: questions/02 - Authentication
+include::questions/02 - Authentication/index.adoc[]
+
+<<<
+:imagesdir: questions/03 - IPC
+include::questions/03 - IPC/index.adoc[]
 
 <<<
 :sectnums!:
@@ -29,7 +33,9 @@ include::questions/00 - Introduction/glossary.adoc[]
 
 include::questions/01 - Functional quarters/glossary.adoc[]
 
-include::questions/02 - OIDC/glossary.adoc[]
+include::questions/02 - Authentication/glossary.adoc[]
+
+include::questions/03 - IPC/glossary.adoc[]
 
 <<<
 == Bibliography
@@ -37,4 +43,6 @@ include::questions/00 - Introduction/bibliography.adoc[]
 
 include::questions/01 - Functional quarters/bibliography.adoc[]
 
-include::questions/02 - OIDC/bibliography.adoc[]
+include::questions/02 - Authentication/bibliography.adoc[]
+
+include::questions/03 - IPC/bibliography.adoc[]

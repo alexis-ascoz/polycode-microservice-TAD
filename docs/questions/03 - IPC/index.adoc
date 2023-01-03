@@ -1,2 +1,8 @@
 == Inter-process communication
 
+Inter-process communication (IPC) refers to the mechanisms used by different processes to communicate with each other. Here, we approach this subject within the context of a microservice architecture application. This is important because microservices are typically designed to be independently deployable and scalable, which means they are often deployed on different machines or in different locations.
+
+There is a wide range of IPC mechanisms available, and each has its own advantages and disadvantages. Here, we will focus on the most popular ones, by category.
+
+=== Synchonous communication
+

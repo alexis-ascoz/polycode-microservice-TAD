@@ -1,0 +1,4 @@
+[discrete]
+IPC
+
+https://vishnuch.tech/interprocess-communication-in-microservices[IPC in Microservices - vishnuch.tech] +

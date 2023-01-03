@@ -1,5 +1,5 @@
 [discrete]
-Oauth 2.0
+Authentication
 
 https://curity.io/resources/openid-connect[OpenID Connect - curity.io] +
 https://blog.postman.com/pkce-oauth-how-to/[Oauth 2.0 with PKCE - postman.com] +

@@ -2,8 +2,10 @@
 Alexis Bernard <alexisbernard34310@gmail.com> 
 :description: This document describes the technical architecture of PolyCode to the microservices migration. 
 :hide-uri-scheme:
-:sectanchors: 
-:toc:
+:doctype: book
+:title-logo-image: image:logo.png[PolyCode, top=3%,align=center]
+:sectanchors:
+:toc: left
 :toclevels: 3
 :toc-title: Table of Contents
 
@@ -25,8 +27,9 @@ include::questions/02 - Authentication/index.adoc[]
 :imagesdir: questions/03 - IPC
 include::questions/03 - IPC/index.adoc[]
 
-<<<
 :sectnums!:
+
+<<<
 [glossary]
 == Glossary
 include::questions/00 - Introduction/glossary.adoc[]

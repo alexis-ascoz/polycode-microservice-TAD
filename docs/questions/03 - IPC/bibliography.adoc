@@ -2,7 +2,24 @@
 IPC
 
 https://vishnuch.tech/interprocess-communication-in-microservices[IPC in Microservices - vishnuch.tech] +
+https://www.nginx.com/blog/building-microservices-inter-process-communication/[IPC in Microservices - nginx.com] +
 https://www.redhat.com/en/topics/api/what-is-a-rest-api[What is a REST API? - Red Hat] +
 https://restfulapi.net/rest-architectural-constraints/[REST Architectural Constraints - restfulapi.net] +
 https://grpc.io/docs/what-is-grpc/introduction/[What is gRPC? - gRPC.io] +
 https://developers.google.com/protocol-buffers/docs/overview[Protocol Buffers - developpers.google.com] +
+https://www.rabbitmq.com/[RabbitMQ - rabbitmq.com] +
+https://activemq.apache.org/[ActiveMQ - activemq.apache.org] +
+https://www.ibm.com/in-en/products/mq[IBM MQ - ibm.com] +
+https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern[Circuit Breaker Design Pattern - wikipedia.org] +
+https://dzone.com/articles/performance-patterns-in-microservices-based-integr-1[Bulkhead Pattern - dzone.com] +
+https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh[Service Mesh - Red Hat] +
+https://istio.io/latest/about/service-mesh/[Service Mesh - istio.io] +
+https://www.envoyproxy.io/[Envoy Proxy - envoyproxy.io] +
+https://iximiuz.com/en/posts/service-proxy-pod-sidecar-oh-my/[Service Proxy Pod Sidecar - iximiuz.com] +
+https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/[Service Discovery - nginx.com] +
+https://www.baeldung.com/cs/service-discovery-microservices[Service Discovery - baeldung.com] +
+https://www.rabbitmq.com/[RabbitMQ - rabbitmq.com] +
+https://developer.hashicorp.com/consul/docs/architecture[Consul Architecture - developer.hashicorp.com] +
+https://developer.hashicorp.com/consul/docs/connect/dataplane[Consul Simplified Architecture - developer.hashicorp.com] +
+https://developer.hashicorp.com/consul/docs/architecture/consensus[Consul Consensus - developer.hashicorp.com] +
+https://www.educative.io/answers/what-is-gossip-protocol[What is Gossip Protocol? - educative.io] +

@@ -358,5 +358,15 @@ Below is a proposed architecture for PolyCode microservices.
 .PolyCode microservice architecture schema
 image::images/PolyCode microservice architecture schema.png[]
 
+The main application will be detached into several microservices. This proposal is made of five microservices, themselves made of several modules. In the future, each microservice module may be detached into a new microservice.
+
+For now, the five microservices are:
+
+- `Authentication` (Keycloak): This microservice will be used for all PolyCode users and services authentication.
+- `Account`: This microservice will be used for all PolyCode users and services account management, including the user profile, the user preferences, the user teams, etc. It also used to manage the user's transactions (shop). For now, this microservice will aslo do the authorization part, because it is already implemented.
+- `Mailer`: This microservice will be used to send emails to users.
+- `Learning`: This microservice will be used to manage the learning part of PolyCode, including the campaigns, the tests, the contents, the modules, the submitables, the validators, etc. It also used to get statistics about the assessments part.
+- `Runner`: This microservice will be used to run the user's code and return standard output and standard error.
+
 In a first time, we will only detach the authentication microservice from the main application. The other microservices will be detached later.
 The authorization part will be migrated to the authentication microservice in a second time.

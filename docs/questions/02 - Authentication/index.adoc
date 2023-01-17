@@ -46,14 +46,14 @@ Access token:: The token issued by the authorization server. The client uses the
 There is mutliple flow to authenticate a user. Here is the most common ones, and his differences.
 
 .Oauth flows comparaison
-image::images/Oauth flows comparaison.png[]
+image::images/Oauth flows comparaison.png[align=center]
 
 ===== Authorization code flow
 
 The authorization code flow is the most secure one. It's the one we will use in this project. Here is a diagram of this flow :
 
 .Authorization code flow
-image::images/Authorization code flow.png[]
+image::images/Authorization code flow.png[align=center]
 
 Because this flow will be used in PolyCode, we will explain it in details. Here are the steps of this flow :
 
@@ -72,14 +72,14 @@ Because this flow will be used in PolyCode, we will explain it in details. Here 
 The implicit flow is the most simple one. In this flow, the authorization server return directly the token. This method is not secure and should not be used in production. Here is a diagram of this flow :
 
 .Implicit flow
-image::images/Implicit flow.png[]
+image::images/Implicit flow.png[align=center]
 
 ===== Hybrid flow
 
 The hybrid flow is the same as authorization code flow, but there is a token server that deliver the token, after authentication by the authorization server. Here is a diagram that explain the request path :
 
 .Hybrid flow
-image::images/Hybrid flow.png[]
+image::images/Hybrid flow.png[align=center]
 
 ==== Scope
 
@@ -98,7 +98,7 @@ The JWT is used for the authentication in OpenID Connect. His integrity is verif
 Here is an explaination of the JWT parts :
 
 .JWT decomposition
-image::images/JWT decomposition.png[]
+image::images/JWT decomposition.png[align=center]
 
 ==== Claims
 
@@ -115,14 +115,14 @@ There are three types of claims :
 Here is an payload of an basic ID token used in OpenID Connect, with the definition of each claims :
 
 .ID token payload
-image::images/ID token payload.png[]
+image::images/ID token payload.png[align=center]
 
 ==== Refresh token
 
 Once the user is authenticated, the authorization server return an access token, valid for a certain amount of time. Once this token expires, the client can ask for a new one, using the refresh token. Here is a diagram of the flow to get a new token :
 
 .Refresh and access token
-image::images/Refresh and access token.png[]
+image::images/Refresh and access token.png[align=center]
 
 === PKCE
 
@@ -143,7 +143,7 @@ When the client send the authorization request to the authorization server, he a
 Then, when the client send back the authorization code to the authorization server, he also send the code verifier. The authorization server then hash the code verifier and compare it to the code challenge. If they match, the authorization server send back the access token. Here is a diagram of this flow :
 
 .Authorization code flow with PKCE
-image::images/Authorization code flow with PKCE.png[]
+image::images/Authorization code flow with PKCE.png[align=center]
 
 === Oauth 2.1
 
@@ -170,14 +170,14 @@ OpenID Connect (OIDC) is an authentication layer on top of Oauth 2.0. It's a pro
 There is multiple scopes in OIDC. Let's see the most common ones :
 
 .OIDC scopes
-image::images/OIDC scopes.png[]
+image::images/OIDC scopes.png[align=center]
 
 ==== Endpoints
 
 Here is the endpoints defines in OIDC :
 
 .OIDC endpoints
-image::images/OIDC endpoints.png[]
+image::images/OIDC endpoints.png[align=center]
 
 === LDAP
 
@@ -198,7 +198,7 @@ With the graphical interface, you can manage easily and quickly your resources. 
 Here is an image of the keycloak architecture :
 
 .Keycloak architecture
-image::images/Keycloak architecture.png[]
+image::images/Keycloak architecture.png[align=center]
 
 In the case of PolyCode, we will use KeyCloak to manage the authentication and authorization of our users and services.
 
@@ -222,7 +222,7 @@ For now, we use an Oauth2 system, with our own implementation. We will migrate t
 Here is a diagram of the wanted architecture :
 
 .PolyCode authentication architecture schema
-image::images/PolyCode authentication architecture schema.png[]
+image::images/PolyCode authentication architecture schema.png[align=center]
 
 The goal is to have a KeyCloak instance, with a client for each service. Each service will have a client secret, and will use it to authenticate to KeyCloak.
 
@@ -281,7 +281,7 @@ Then, you can access the polycode-keycloak application at http://localhost:3001.
 Here is the deployment diagram of the future PolyCode authentication architecture :
 
 .PolyCode authentication deployment schema
-image::images/PolyCode authentication deployment schema.png[]
+image::images/PolyCode authentication deployment schema.png[align=center]
 
 All communications between those services are in HTTP, and are secured with TLS.
 
@@ -294,39 +294,39 @@ Here is some sequence diagrams to explain the differences between the authentica
 Here is the sequence diagram of the user account creation :
 
 .PolyCode authentication sequence diagram - Vanilla user account creation
-image::images/PolyCode authentication sequence diagram - Vanilla user account creation.png[]
+image::images/PolyCode authentication sequence diagram - Vanilla user account creation.png[align=center]
 
 ===== User account creation via polytech LDAP
 
 Here is the sequence diagram of the user account creation via polytech LDAP :
 
 .PolyCode authentication sequence diagram - Polytech LDAP account creation
-image::images/PolyCode authentication sequence diagram - Polytech LDAP account creation.png[]
+image::images/PolyCode authentication sequence diagram - Polytech LDAP account creation.png[align=center]
 
 ===== User account creation via google
 
 Here is the sequence diagram of the user account creation via google :
 
 .PolyCode authentication sequence diagram - Google identity provider user account creation
-image::images/PolyCode authentication sequence diagram - Google identity provider user account creation.png[]
+image::images/PolyCode authentication sequence diagram - Google identity provider user account creation.png[align=center]
 
 ===== Vanilla user authentication
 
 Here is the sequence diagram of the user authentication :
 
 .PolyCode authentication sequence diagram - Vanilla user authentication
-image::images/PolyCode authentication sequence diagram - Vanilla user authentication.png[]
+image::images/PolyCode authentication sequence diagram - Vanilla user authentication.png[align=center]
 
 ===== Polytech LDAP user authentication
 
 Here is the sequence diagram of the Polytech LDAP user authentication :
 
 .PolyCode authentication sequence diagram - Polytech LDAP user authentication
-image::images/PolyCode authentication sequence diagram - Polytech LDAP user authentication.png[]
+image::images/PolyCode authentication sequence diagram - Polytech LDAP user authentication.png[align=center]
 
 ===== User authentication via google
 
 Here is the sequence diagram of the user authentication via google :
 
 .PolyCode authentication sequence diagram - Google identity provider user authentication
-image::images/PolyCode authentication sequence diagram - Google identity provider user authentication.png[]
+image::images/PolyCode authentication sequence diagram - Google identity provider user authentication.png[align=center]

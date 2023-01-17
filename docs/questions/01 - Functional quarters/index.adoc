@@ -356,7 +356,7 @@ She is organized by functional quarters.
 Below is a proposed architecture for PolyCode microservices.
 
 .PolyCode microservice architecture schema
-image::images/PolyCode microservice architecture schema.png[]
+image::images/PolyCode microservice architecture schema.png[align=center]
 
 The main application will be detached into several microservices. This proposal is made of five microservices, themselves made of several modules. In the future, each microservice module may be detached into a new microservice.
 

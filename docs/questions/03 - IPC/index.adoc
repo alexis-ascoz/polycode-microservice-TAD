@@ -69,7 +69,7 @@ Asynchronous communication is a type of communication where the sender service d
 A message queue is a temporary storage area where messages are placed while waiting to be processed. Message queues are typically used to decouple the sender and receiver of a message, and to provide a buffer for the sender and receiver to handle the message. Here is a simple example of a message queue:
 
 .Message queue simple example
-image::images/Message queue.png[]
+image::images/Message queue.png[align=center]
 
 In this example, the sender service sends a message to the message queue, and the receiver service reads the message from the queue. The sender and receiver services do not need to be running at the same time, and they do not need to know anything about each other. This decoupling makes message queues well-suited for microservices architectures.
 
@@ -82,7 +82,7 @@ Publish-subscribe is a messaging pattern where senders of messages, called publi
 The following diagram shows a simple example of a publish-subscribe system:
 
 .Publish-subscribe simple example
-image::images/Publish-subscribe simple example.png[]
+image::images/Publish-subscribe simple example.png[align=center]
 
 In this example, the publisher service publishes a message to the message broker, and the subscriber service subscribes to the message broker. The publisher and subscriber services do not need to be running at the same time, and they do not need to know anything about each other. This decoupling makes publish-subscribe well-suited for microservices architectures.
 
@@ -99,7 +99,7 @@ An API gateway is a single entry point for clients to access the functionality o
 The following diagram shows a simple example of an API gateway:
 
 .API gateway
-image::images/API gateway.png[]
+image::images/API gateway.png[align=center]
 
 In this example, the API gateway is responsible for routing requests to the appropriate microservice, and for aggregating the results.
 
@@ -110,14 +110,14 @@ The circuit breaker pattern is a mechanism that allows a service to fail fast an
 The following diagram shows a simple example of a closed circuit breaker:
 
 .Closed circuit breaker
-image::images/Closed circuit breaker.png[]
+image::images/Closed circuit breaker.png[align=center]
 
 In this example, the circuit breaker is closed, and the service can be called. Until the service succeeds, the circuit breaker remains closed.
 
 The following diagram shows a simple example of an open circuit breaker:
 
 .Open circuit breaker
-image::images/Open circuit breaker.png[]
+image::images/Open circuit breaker.png[align=center]
 
 In this example, the circuit breaker is open, and the service cannot be called. The circuit breaker will remain open for a fixed amount of time, or until a certain number of calls have been made. When the circuit breaker is open, the client receives an error message by the circuit breaker.
 
@@ -128,7 +128,7 @@ The bulkhead pattern is a mechanism that allows a service to limit the number of
 The following diagram shows a simple example of the bulkhead pattern:
 
 .Bulkhead pattern
-image::images/Bulkhead pattern.png[]
+image::images/Bulkhead pattern.png[align=center]
 
 This pattern works as follows:
 
@@ -146,14 +146,14 @@ The sidecar pattern is a mechanism that allows a service to add additional funct
 The following diagram shows a simple example of the sidecar pattern:
 
 .Sidecar pattern
-image::images/Sidecar pattern.png[]
+image::images/Sidecar pattern.png[align=center]
 
 With this pattern, each microservice is composed of two parts: the microservice and the sidecar. When a request is made from or to the microservice, the sidecar intercepts the request and adds additional functionality, then forwards the request. Let's explain in detail how it works.
 
 The following diagram shows the traffic flow when a request is made to the microservice, with a service proxy sidecar:
 
 .Sidecar pattern - request to microservice
-image::images/Sidecar pattern - request to microservice.png[]
+image::images/Sidecar pattern - request to microservice.png[align=center]
 
 When a request is made to the microservice, the service proxy intercepts the request (and can adds additional functionalities), then forwards the request to the microservice. The microservice processes the request, and returns the response to the service proxy (and can too adds additional functionalities), which forwards it to the client.
 
@@ -175,7 +175,7 @@ The most popular service mesh is Istio. It is an open source service mesh that p
 Here is a schema of the Istio service mesh, with the envoy proxy sidecar:
 
 .Istio service mesh
-image::images/Istio service mesh.png[]
+image::images/Istio service mesh.png[align=center]
 
 === Service discovery
 
@@ -200,7 +200,7 @@ In those solutions, there are two common patterns for a service to register itse
 In self-registration, the service is responsible for registering and deregistering in the services register and can send heartbeat if necessary. This pattern is the most simple one and is used in many systems.
 
 .Self-registration
-image::images/Self-registration.png[]
+image::images/Self-registration.png[align=center]
 
 The real benefit of this pattern is its simplicity. You don't need any other system component.
 
@@ -209,7 +209,7 @@ The real benefit of this pattern is its simplicity. You don't need any other sys
 In third-party registration, a specific service is responsible to register all services in the service registry. This service is called a registrar. The registrar, implemented as a separate service, should be highly available.
 
 .Third-party registration
-image::images/Third-party registration.png[]
+image::images/Third-party registration.png[align=center]
 
 The benefits of this pattern are:
 
@@ -234,19 +234,19 @@ The services does not need to know the location of the others services, and can 
 Here is the schema of the service discovery with Consul:
 
 .Service discovery with Consul
-image::images/Service discovery with Consul.png[]
+image::images/Service discovery with Consul.png[align=center]
 
 It is the basic functioning of Consul. In a kubernetes cluster, the consul client agent is not necessary, because the kubelet can replace it.
 
 .Service discovery with Consul in a kubernetes cluster
-image::images/Service discovery with Consul in a kubernetes cluster.png[]
+image::images/Service discovery with Consul in a kubernetes cluster.png[align=center]
 
 In this schema, the consul server is deployed in a kubernetes cluster. The consul client agent is replaced a unique sidecar container, that is deployed in each pod. The sidecar container is responsible to register, deregister and query the services and is made up of two parts: a dataplane and a envoy proxy.
 
 Consul uses the gossip protocol to share the services states between the client agents and the server agents. The gossip protocol is a peer-to-peer protocol, that means that each node is responsible to share the information with the others. Here is a schema of the gossip protocol:
 
 .Gossip protocol with consul
-image::images/Gossip protocol with consul.png[]
+image::images/Gossip protocol with consul.png[align=center]
 
 Every few seconds, each consul client agent and server will send a heartbeat to one of its peers, chosen randomly. By this way, the global state of the cluster is shared between all nodes of the cluster. This protocol is based on UDP, so it is very efficient, and it is fault tolerant. It is also very scalable, and reduces the load on the network bandwidth.
 
@@ -257,7 +257,7 @@ In client-side discovery, the client is responsible for discovering the location
 The following diagram shows a simple example of client-side discovery:
 
 .Client-side discovery
-image::images/Client-side discovery.png[]
+image::images/Client-side discovery.png[align=center]
 
 in this schema, each service, once started, will register itself to the service registry.
 
@@ -270,7 +270,7 @@ In server-side discovery, the server (load balancer) is responsible for discover
 The following diagram shows a simple example of server-side discovery:
 
 .Server-side discovery
-image::images/Server-side discovery.png[]
+image::images/Server-side discovery.png[align=center]
 
 In this schema, as well for the client-side discovery, each service, once started, will register itself to the service registry.
 
@@ -288,7 +288,7 @@ The server-side discovery has several benefits:
 For our application, PolyCode, we have different types of microservices. There is the microservice cutting scheme presented in part 1 of this document.
 
 .PolyCode microservice architecture schema
-image::images/PolyCode microservice architecture schema.png[]
+image::images/PolyCode microservice architecture schema.png[align=center]
 
 The five microservices are:
 
@@ -327,7 +327,7 @@ The chosen the queueing system RabbitMQ. There is no particular reason for this 
 Here is the schema of the `Mailer` microservice communication with RabbitMQ message broker:
 
 .Mailer microservice communication
-image::images/Mailer microservice communication.png[]
+image::images/Mailer microservice communication.png[align=center]
 
 ==== Others services communication
 
@@ -342,6 +342,6 @@ For the service discovery, we will use the third-party registration pattern. We 
 Here is the schema of the PolyCode service discovery with Consul:
 
 .PolyCode service discovery with Consul
-image::images/PolyCode service discovery with Consul.png[]
+image::images/PolyCode service discovery with Consul.png[align=center]
 
 In this schema, we can see that each microservice is deployed in a kubernetes pod. Each pod has the microservice and a sidecar container, that is responsible to register, deregister and query the service. The sidecar container is made up of two parts: the dataplane and an envoy proxy. The envoy proxy is responsible to communicate with the service, and make load-balacing, and the dataplane with the consul control plane. The consul control plane is responsible to keep the global state of the cluster.

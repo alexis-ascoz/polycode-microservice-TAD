@@ -345,3 +345,10 @@ Here is the schema of the PolyCode service discovery with Consul:
 image::images/PolyCode service discovery with Consul.png[align=center]
 
 In this schema, we can see that each microservice is deployed in a kubernetes pod. Each pod has the microservice and a sidecar container, that is responsible to register, deregister and query the service. The sidecar container is made up of two parts: the dataplane and an envoy proxy. The envoy proxy is responsible to communicate with the service, and make load-balacing, and the dataplane with the consul control plane. The consul control plane is responsible to keep the global state of the cluster.
+
+==== Sequence diagram of a basic request
+
+Here is a sequence diagram of a basic request, from the `Account` service to the `Authentication` service, to verify the token validity:
+
+.Sequence diagram of a basic PolyCode request
+image::images/Sequence diagram of a basic PolyCode request.png[align=center]

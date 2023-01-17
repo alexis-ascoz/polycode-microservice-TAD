@@ -27,6 +27,10 @@ include::questions/02 - Authentication/index.adoc[]
 :imagesdir: questions/03 - IPC
 include::questions/03 - IPC/index.adoc[]
 
+<<<
+:imagesdir: questions/09 - Security
+include::questions/09 - Security/index.adoc[]
+
 :sectnums!:
 
 <<<
@@ -40,6 +44,8 @@ include::questions/02 - Authentication/glossary.adoc[]
 
 include::questions/03 - IPC/glossary.adoc[]
 
+include::questions/09 - Security/glossary.adoc[]
+
 <<<
 == Bibliography
 include::questions/00 - Introduction/bibliography.adoc[]
@@ -49,3 +55,5 @@ include::questions/01 - Functional quarters/bibliography.adoc[]
 include::questions/02 - Authentication/bibliography.adoc[]
 
 include::questions/03 - IPC/bibliography.adoc[]
+
+include::questions/09 - Security/bibliography.adoc[]

@@ -1,2 +1,60 @@
 == Security
 
+The security is a very important part in any software development, and that has always been.
+
+In a microservice architecture, unlike a monolith, each service runs in its own process and may have its own unique security requirements. Additionally, because the services communicate with each other over the network, there is a greater risk of data breaches and other security incidents. Therefore, it is important to consider security as early as possible in the development process.
+
+There is many ways to secure a microservice architecture, under several aspects. Here, we will try to cover the most important ones. You have to keep in mind that there is no ultimate solution, and you have to choose the right security solution for your specific needs.
+
+=== Application level
+
+The application security level concerns the code itself, and the way it is written. It is important to write secure code, and to follow the best practices. It is necessary to start that a developer will write code containing security failures. We cannot prevent this, but we can limit it in several ways. Let's see some of them.
+
+==== Code Review
+
+The code review is a very important part of the development process. It is a way to ensure that the code is written in a secure way, and that it follows the best practices. It is also a way to ensure that the code is written in a way that is easy to maintain, and that it is easy to understand. It is always good to have another point of view on written code.
+
+Examination of the code can be carried out by someone in the same company, or by external developers, with security audits.
+
+==== Dependency Analysis
+
+Additionally, it is necessary to keep an eye on the dependencies used for the development of applications. 
+security failures are frequently discovered, and security updates are then necessary.
+
+There are tools to detect it automatically, such as Dependabot, on GitHub.
+
+==== Security Testing
+
+===== Static application security testing (SAST)
+
+===== Dynamic application security testing (DAST)
+
+===== Stress Testing
+
+=== Communication level
+
+HTTP everywhere
+
+==== External Communication
+
+===== Microservise level
+
+===== Sidecar level
+
+===== Ingress level
+
+===== General
+
+Rate limiting
+
+==== Internal Communication
+
+===== Authentication
+
+===== Authorization
+
+role based - Last privilege
+
+=== Data Security
+
+=== Secrets Management

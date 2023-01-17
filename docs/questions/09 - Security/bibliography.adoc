@@ -1,3 +1,8 @@
 [discrete]
 Security
 
+https://www.okta.com/resources/whitepaper/8-ways-to-secure-your-microservices-architecture/[8 Ways to Secure Your Microservices Architecture - okta.com] +
+https://medium.com/microservices-learning/how-to-implement-security-for-microservices-89b140d3e555[How to Implement Security for Microservices - medium.com] +
+https://geekflare.com/securing-microservices/[Securing Microservices - geekflare.com] +
+https://circleci.com/blog/sast-vs-dast-when-to-use-them/[SAST vs DAST: When to Use Them - circleci.com] +
+https://github.com/features/security/[Secure at every step - github.com] +

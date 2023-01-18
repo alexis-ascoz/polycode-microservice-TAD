@@ -6,3 +6,4 @@ https://medium.com/microservices-learning/how-to-implement-security-for-microser
 https://geekflare.com/securing-microservices/[Securing Microservices - geekflare.com] +
 https://circleci.com/blog/sast-vs-dast-when-to-use-them/[SAST vs DAST: When to Use Them - circleci.com] +
 https://github.com/features/security/[Secure at every step - github.com] +
+https://community.microfocus.com/cyberres/b/sws-22/posts/sast-101-the-basics-of-static-application-security-testing[Static Application Security Testing (SAST) - community.microfocus.com] +

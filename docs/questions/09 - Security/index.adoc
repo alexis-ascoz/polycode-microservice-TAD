@@ -21,31 +21,69 @@ Examination of the code can be carried out by someone in the same company, or by
 Additionally, it is necessary to keep an eye on the dependencies used for the development of applications. 
 security failures are frequently discovered, and security updates are then necessary.
 
-There are tools to detect it automatically, such as Dependabot, on GitHub.
+There are tools to detect it automatically, such as Dependabot (GitHub), or Snyk.
 
 ==== Security Testing
 
+Security testing is a way to ensure that the code written code works as expected. There are several ways to do it, and we will explain three of them.
+
 ===== Static application security testing (SAST)
+
+SAST is a way to analyze the code statically, without executing it (only with the source code). It is a way to detect security failures in the code, and to ensure that the code follows the best practices. There are several tools to do it, such as Klocwork, or Checkmarx.
 
 ===== Dynamic application security testing (DAST)
 
+DAST is a way to analyze the code dynamically, by executing it (without the source code). It is a way to detect security failures in the code, and to ensure that the code follows the best practices. Arachni, an open source tool, can be used for this purpose.
+
+Here is a diagram showing where the SAST and DAST tests are done on the development process.
+
+.SAST and DAST tests in the development process
+image::images/SAST and DAST tests in the development process.png[align=center]
+
 ===== Stress Testing
+
+Stress testing is a way to test the code under heavy load. It is a way to ensure that the code can handle a large number of requests. There are several tools to do it, such as WebLoad, LoadNinja, or JMeter.
+
+This type of testing is important, because there is no other way to test the resistance of an application against a huge load.
 
 === Communication level
 
-HTTP everywhere
+The communication level concerns the way the services communicate with each other. In a microservice architecture, each microservice communication is done through the network.
 
-==== External Communication
+There are two types of communication in a microservice architecture: internal communication and external communication. Here is a diagram showing those two different types.
 
-===== Microservise level
+.Internal and external communication in a microservice architecture
+image::images/Internal and external communication in a microservice architecture.png[align=center, width=70%]
 
-===== Sidecar level
+External communication is the communication between a microservice and the web. If a microservice is exposed to the web, it is strongly likely that he was attacked. Therefore, it is necessary to ensure that the communication between the microservice and the web is encrypted.
 
-===== Ingress level
+Internal communication is the communication between microservices. This communication is not exposed to the web, but it is still better to ensure that it is encrypted, if possible.
 
-===== General
+Let us first see what layers we can encrypt communication.
 
-Rate limiting
+==== Gateway level
+
+If you use a gateway, you can encrypt the communication between the gateway and the web. This is the most easy way to add encryption. You only have to add a TLS certificate to the gateway, then all the outgoing communication will be encrypted. Note that all internal communication will not be encrypted.
+
+Here is a diagram showing the gateway level encryption:
+
+.Gateway level encryption
+image::images/Gateway level encryption.png[align=center]
+
+Here, the gateway provide a TLS certificate to the web. The web will then be able to communicate with him in a secure way.
+
+==== Sidecar level
+
+If you do not use a gateway, you can encrypt the communication using the sidecar pattern. This is a more complex way. You have to add a TLS certificate to each sidecar, then all communication will be encrypted (external and internal), except between the sidecar and the microservice. This is the most secure way.
+
+Here is a diagram showing the sidecar level encryption:
+
+.Sidecar level encryption
+image::images/Sidecar level encryption.png[align=center]
+
+
+
+==== Rate limiting
 
 ==== Internal Communication
 
@@ -58,3 +96,7 @@ role based - Last privilege
 === Data Security
 
 === Secrets Management
+
+=== PolyCode Integration
+
+Sequence diagram or request with consul tls

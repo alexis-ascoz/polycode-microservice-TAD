@@ -7,3 +7,7 @@ https://geekflare.com/securing-microservices/[Securing Microservices - geekflare
 https://circleci.com/blog/sast-vs-dast-when-to-use-them/[SAST vs DAST: When to Use Them - circleci.com] +
 https://github.com/features/security/[Secure at every step - github.com] +
 https://community.microfocus.com/cyberres/b/sws-22/posts/sast-101-the-basics-of-static-application-security-testing[Static Application Security Testing (SAST) - community.microfocus.com] +
+https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-credentials-flow[Client Credentials Flow - auth0.com] +
+https://digitalguardian.com/blog/what-role-based-access-control-rbac-examples-benefits-and-more[Role-Based Access Control (RBAC)? - digitalguardian.com] +
+https://arctype.com/blog/transparent-data-encryption/[Transparent Data Encryption in PostgreSQL - arctype.com] +
+https://wiki.postgresql.org/wiki/Transparent_Data_Encryption[Transparent Data Encryption - wiki.postgresql.org] +

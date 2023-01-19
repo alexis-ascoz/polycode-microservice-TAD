@@ -68,35 +68,82 @@ If you use a gateway, you can encrypt the communication between the gateway and 
 Here is a diagram showing the gateway level encryption:
 
 .Gateway level encryption
-image::images/Gateway level encryption.png[align=center]
+image::images/Gateway level encryption.png[align=center, width=70%]
 
 Here, the gateway provide a TLS certificate to the web. The web will then be able to communicate with him in a secure way.
 
 ==== Sidecar level
 
-If you do not use a gateway, you can encrypt the communication using the sidecar pattern. This is a more complex way. You have to add a TLS certificate to each sidecar, then all communication will be encrypted (external and internal), except between the sidecar and the microservice. This is the most secure way.
+You can also encrypt the communication between each microservice and the gateway (or the web, if you donc have a gateway). This is a more complex way, but it is also the most secure one.
 
 Here is a diagram showing the sidecar level encryption:
 
 .Sidecar level encryption
-image::images/Sidecar level encryption.png[align=center]
+image::images/Sidecar level encryption.png[align=center, width=70%]
 
+Here, each microservice have a sidecar that provide a TLS certificate. With this approach, all communication is encrypted (internal and external). The only exception is the communication between the sidecar and the microservice, but this communication is not exposed to any other network.
 
+It's strongly recommended to use this approach, if possible.
 
 ==== Rate limiting
 
-==== Internal Communication
+Rate limiting is a way to limit the number of requests that can be sent to a microservice. It is a way to prevent a service from being overloaded, or to prevent a service from being attacked, such as a DDoS attack, or a brute force attack.
+
+There are several ways to do it, such as the Nginx rate limiting module, or the Envoy rate limiting module.
+
+==== Service Authentication and Authorization
+
+Service authentication and authorization is a way to ensure that only known and authorized services can communicate with each other.
 
 ===== Authentication
 
+Authentication is a way to ensure that the service is known. Here, we will see how to authenticate a service using OAuth 2.0.
+
+NOTE: You can refer to the authentication part of this document to see more details.
+
+A service, such as a user, can authenticate himself to the authorization server, and get an access token to communicate with other services. In this case, it's the Client Credentials Grant type that is used.
+
+Here is a sequence diagram of this flow:
+
+.Client Credentials Flow
+image::images/Client Credentials Flow.png[align=center]
+
+As you can see, this flow is very simple. Because the communication is encrypted, as explained in the previous section, the client secret is not exposed to the network.
+
 ===== Authorization
 
-role based - Last privilege
+Authorization is a way to ensure that a known service has sufficient rights to communicate with another service. To do so, we will use the role based access control (RBAC) model.
+
+This model is based on roles and permissions. A role is a set of permissions, and is assigned to a subject (can be a user, or a service). A permission is an action associated with a resource. For example, a subject can be assigned to the role named `admin`, who own the permission `read` on the resource `user`. This means that this subject can read the resource `user`.
+
+With this model, we can apply the principle of least privilege. This principle is a way to ensure that a subject can only do what he needs to do. It is better to have a problem of lack of permissions, and to have to add it, rather than an excess of not necessary rights.
+
+Generally, the authorization server is the one that will check the permissions of a subject.
 
 === Data Security
+
+The data security concerns the way the data is stored. This is an extremely important part, because it is the most important asset of a company, and can cause a lot of problems about privacy, or even financial problems if they are stolen.
+
+Let's see what we can do to manage correctly the data.
+
+==== Data Encryption
+
+It is necessary to encrypt the sensitive data as much as possible.
+
+First of all, all passwords must be hashed, and that with a strong salt. Basically, this is already done by the authentication server, which is the one that stores the passwords.
+
+To encrypt the sensitive data (who needs to be read, not as a password), the cloud provider can provide a way to do it, or if you manage your own database, you can use its feature (if it exists).
+
+The cons of this approach is that it is not possible to search in this data, and the encryption and decryption process can be very slow.
+
+==== Data Backup
+
+An important part of data management is to backup the data. As said before, the data is the most important asset of a company, and it is necessary to ensure that it is not lost. That's why it is necessary to have copies of the data.
+
+// TODO : read data backup article
 
 === Secrets Management
 
 === PolyCode Integration
 
-Sequence diagram or request with consul tls
+Sequence diagram of request with consul tls and oauth2 authentication & authorization

@@ -6,7 +6,7 @@ Alexis Bernard <alexisbernard34310@gmail.com>
 :title-logo-image: image:logo.png[PolyCode, top=3%,align=center]
 :sectanchors:
 :toc: left
-:toclevels: 3
+:toclevels: 2
 :toc-title: Table of Contents
 
 <<<

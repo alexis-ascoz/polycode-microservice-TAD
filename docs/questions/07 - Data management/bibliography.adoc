@@ -1,0 +1,5 @@
+[discrete]
+Data management
+
+https://medium.com/@ggonchar/data-consistency-in-microservices-architecture-bf99ba31636f[Data Consistency in Microservices Architecture - medium.com] +
+https://www.postgresql.org/docs/current/app-pg-dumpall.html[pg_dumpall - postgresql.org] +

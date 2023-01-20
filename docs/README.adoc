@@ -28,6 +28,10 @@ include::questions/02 - Authentication/index.adoc[]
 include::questions/03 - IPC/index.adoc[]
 
 <<<
+:imagesdir: questions/07 - Data management
+include::questions/07 - Data management/index.adoc[]
+
+<<<
 :imagesdir: questions/09 - Security
 include::questions/09 - Security/index.adoc[]
 
@@ -44,6 +48,8 @@ include::questions/02 - Authentication/glossary.adoc[]
 
 include::questions/03 - IPC/glossary.adoc[]
 
+include::questions/07 - Data management/glossary.adoc[]
+
 include::questions/09 - Security/glossary.adoc[]
 
 <<<
@@ -55,5 +61,7 @@ include::questions/01 - Functional quarters/bibliography.adoc[]
 include::questions/02 - Authentication/bibliography.adoc[]
 
 include::questions/03 - IPC/bibliography.adoc[]
+
+include::questions/07 - Data management/bibliography.adoc[]
 
 include::questions/09 - Security/bibliography.adoc[]

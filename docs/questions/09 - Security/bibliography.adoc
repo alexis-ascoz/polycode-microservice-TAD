@@ -11,3 +11,6 @@ https://auth0.com/docs/get-started/authentication-and-authorization-flow/client-
 https://digitalguardian.com/blog/what-role-based-access-control-rbac-examples-benefits-and-more[Role-Based Access Control (RBAC)? - digitalguardian.com] +
 https://arctype.com/blog/transparent-data-encryption/[Transparent Data Encryption in PostgreSQL - arctype.com] +
 https://wiki.postgresql.org/wiki/Transparent_Data_Encryption[Transparent Data Encryption - wiki.postgresql.org] +
+https://www.techmanyu.com/microservices-and-secrets-management-comparison-of-vault-solutions-2cae54037ad1[Secrets Management - techmanyu.com] +
+https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-what-is-secret[Secrets Manager - cloud.ibm.com] +
+https://www.hashicorp.com/blog/authenticating-applications-with-vault-approle[Hashicorp Vault - hashicorp.com] +

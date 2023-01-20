@@ -124,10 +124,6 @@ Generally, the authorization server is the one that will check the permissions o
 
 The data security concerns the way the data is stored. This is an extremely important part, because it is the most important asset of a company, and can cause a lot of problems about privacy, or even financial problems if they are stolen.
 
-Let's see what we can do to manage correctly the data.
-
-==== Data Encryption
-
 It is necessary to encrypt the sensitive data as much as possible.
 
 First of all, all passwords must be hashed, and that with a strong salt. Basically, this is already done by the authentication server, which is the one that stores the passwords.
@@ -136,14 +132,31 @@ To encrypt the sensitive data (who needs to be read, not as a password), the clo
 
 The cons of this approach is that it is not possible to search in this data, and the encryption and decryption process can be very slow.
 
-==== Data Backup
-
-An important part of data management is to backup the data. As said before, the data is the most important asset of a company, and it is necessary to ensure that it is not lost. That's why it is necessary to have copies of the data.
-
-// TODO : read data backup article
-
 === Secrets Management
+
+Secrets are sensitive data, such as passwords, tokens, certificates, etc. It is necessary to manage them correctly, and to ensure that they are not leaked. There are several ways to do it.
+
+In a microservice architecture, we need to centralize the secrets management, to ensure that all services have the same secrets, and get them from a secure way, so that they are not leaked. There is some solutions to do it, like HashiCorp Vault, Azure Key Vault, or Kubernetes Secrets.
+
+Here, because the chosen solution to PolyCode is HashiCorp Vault, we will explain how it works.
+
+==== HashiCorp Vault
+
+HashiCorp Vault is a tool for securely storing and accessing secrets. It provides a centralized platform for managing sensitive information. Vault can also be used to generate dynamic credentials for services and applications, and to control access to those secrets through role-based access controls.
+
+Here is a diagram showing the flow of HashiCorp Vault:
+
+.HashiCorp Vault flow
+image::images/HashiCorp Vault flow.png[align=center]
+
+As you can see, a service can get the secrets from Vault, using its own credentials. Vault will then check if the service is authorized to get the secrets with the RBAC, and if it is, it will return them.
 
 === PolyCode Integration
 
-Sequence diagram of request with consul tls and oauth2 authentication & authorization
+For PolyCode, we will use some of the solutions explained before:
+
+* `TLS everywhere`: We will use the sidecar level encryption, as explained before. This will ensure that all communication is encrypted, and that the data can't be intercepted.
+* `Service Authentication and Authorization` : We will use the Client Credentials Grant type, with our own Keycloak authorisation server, describe in the authentication part. This will ensure that only known services can communicate with each other.
+* `Service Authorization`: Additionally, we will use the RBAC model, to ensure that the service can only do what it needs to do.
+* `Data Encryption`: We will hash the passwords. For the other data, we will not encrypt them, because it will be too complicated and not necessary for now.
+* `Secrets Management`: We will use HashiCorp Vault, to manage the secrets.

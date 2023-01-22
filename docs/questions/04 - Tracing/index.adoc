@@ -30,3 +30,15 @@ The problem here is again data consistency. We need to ensure that the backup is
 The PolyCode data organization changes is caused by the microservice migration. This new organization is more complex, and it requires more development.
 
 Unfortunately, this refactoring has not been done yet.
+
+== Tracing
+
+Tracing is the ability to follow the flow of a request at its different steps. It is useful to provide more observability, and to debug the application when a problem occurs.
+
+In a monolithic architecture, all the requests are handled by the same application, then it is easy to trace them. You only need to implement a tracing or a log system, and to store it.
+
+Nowadays, a microservice architecture, the requests are handled by different applications, and it is more difficult to trace them. You need to implement a tracing system in each application, and to send the traces to a central system to store them.
+
+Let's see how tracing works in a microservice architecture.
+
+[To be continued]
